@@ -1,3 +1,4 @@
+import json
 import base64
 import io
 import os
@@ -7,6 +8,8 @@ import torch
 import numpy as np
 from typing import List
 from pydantic import BaseModel
+from scipy import signal
+import audioop
 
 from fastapi import FastAPI, UploadFile, Body
 from fastapi.responses import StreamingResponse
@@ -41,6 +44,10 @@ model = Xtts.init_from_config(config)
 model.load_checkpoint(config, checkpoint_dir=model_path, eval=True, use_deepspeed=True if device == "cuda" else False)
 model.to(device)
 print("XTTS Loaded.", flush=True)
+
+with open("./default_speaker.json", "r") as file:
+    speaker = json.load(file)
+
 
 print("Running XTTS Server ...", flush=True)
 
@@ -79,31 +86,58 @@ def postprocess(wav):
     return wav
 
 
-def encode_audio_common(
-    frame_input, encode_base64=True, sample_rate=24000, sample_width=2, channels=1
-):
-    """Return base64 encoded audio"""
-    wav_buf = io.BytesIO()
-    with wave.open(wav_buf, "wb") as vfout:
-        vfout.setnchannels(channels)
-        vfout.setsampwidth(sample_width)
-        vfout.setframerate(sample_rate)
-        vfout.writeframes(frame_input)
 
-    wav_buf.seek(0)
-    if encode_base64:
-        b64_encoded = base64.b64encode(wav_buf.getbuffer()).decode("utf-8")
-        return b64_encoded
+def encode_audio_common(
+    frame_input, encode_base64=True, sample_rate=8000, sample_width=1, channels=1, 
+    original_sample_rate=24000
+):
+    """Return base64 encoded audio with proper resampling"""
+    # Convert bytes to numpy array if needed
+    if isinstance(frame_input, bytes):
+        # Convert based on the width of each sample
+        dtype = np.int16 if sample_width == 2 else (np.int8 if sample_width == 1 else np.float32)
+        audio_data = np.frombuffer(frame_input, dtype=dtype)
     else:
-        return wav_buf.read()
+        audio_data = frame_input
+
+
+    if len(audio_data.shape) > 1:
+        audio_data = audio_data.flatten()
+
+    print(f"Audio data shape: {audio_data.shape}, dtype: {audio_data.dtype}, min: {np.min(audio_data)}, max: {np.max(audio_data)}")
+    
+
+    if audio_data.dtype == np.int16:
+        audio_data_float = audio_data.astype(np.float32) / 32767.0
+    elif audio_data.dtype == np.int8:
+        audio_data_float = audio_data.astype(np.float32) / 127.0
+    else:
+        audio_data_float = audio_data
+
+    if sample_rate != original_sample_rate:
+        # Calculate resampling ratio
+        ratio = sample_rate / original_sample_rate
+        output_samples = int(len(audio_data_float) * ratio)
+        resampled_audio = signal.resample(audio_data_float, output_samples)
+        
+        if sample_width == 2:
+            audio_bytes = (np.clip(resampled_audio, -1, 1) * 32767).astype(np.int16).tobytes()
+        elif sample_width == 1:
+            audio_bytes = (np.clip(resampled_audio, -1, 1) * 127).astype(np.int8).tobytes()
+        else:
+            audio_bytes = resampled_audio.astype(np.float32).tobytes()
+    
+    audio_bytes_mu = audioop.lin2ulaw(audio_bytes, 2)
+    wav_base64 = base64.b64encode(audio_bytes_mu).decode()
+    return wav_base64
 
 
 class StreamingInputs(BaseModel):
-    speaker_embedding: List[float]
-    gpt_cond_latent: List[List[float]]
+    speaker_embedding: List[float] = speaker["speaker_embedding"]
+    gpt_cond_latent: List[List[float]] = speaker["gpt_cond_latent"]
     text: str
-    language: str
-    add_wav_header: bool = True
+    language: str = "en"
+    add_wav_header: bool = False
     stream_chunk_size: str = "20"
 
 
@@ -117,29 +151,28 @@ def predict_streaming_generator(parsed_input: dict = Body(...)):
     add_wav_header = parsed_input.add_wav_header
 
 
-    chunks = model.inference_stream(
+    for chunks in model.inference_stream(
         text,
         language,
         gpt_cond_latent,
         speaker_embedding,
         stream_chunk_size=stream_chunk_size,
         enable_text_splitting=True
-    )
-
-    for i, chunk in enumerate(chunks):
-        chunk = postprocess(chunk)
-        if i == 0 and add_wav_header:
-            yield encode_audio_common(b"", encode_base64=False)
-            yield chunk.tobytes()
-        else:
-            yield chunk.tobytes()
+    ):
+        chunk = postprocess(chunks)
+        processed_chunk = encode_audio_common(
+            chunk, 
+            encode_base64=False, 
+            sample_rate=8000, 
+            sample_width=2
+        )
+        yield processed_chunk
 
 
 @app.post("/tts_stream")
 def predict_streaming_endpoint(parsed_input: StreamingInputs):
     return StreamingResponse(
-        predict_streaming_generator(parsed_input),
-        media_type="audio/wav",
+        predict_streaming_generator(parsed_input)
     )
 
 class TTSInputs(BaseModel):
