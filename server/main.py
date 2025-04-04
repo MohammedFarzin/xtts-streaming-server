@@ -10,8 +10,9 @@ from typing import List
 from pydantic import BaseModel
 from scipy import signal
 import audioop
+from Logger import Log
 
-from fastapi import FastAPI, UploadFile, Body
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, UploadFile
 from fastapi.responses import StreamingResponse
 
 from TTS.tts.configs.xtts_config import XttsConfig
@@ -48,6 +49,8 @@ print("XTTS Loaded.", flush=True)
 with open("./default_speaker.json", "r") as file:
     speaker = json.load(file)
 
+global connections
+connections: dict[str, WebSocket] = {}
 
 print("Running XTTS Server ...", flush=True)
 
@@ -59,20 +62,22 @@ app = FastAPI(
     docs_url="/",
 )
 
-
-@app.post("/clone_speaker")
-def predict_speaker(wav_file: UploadFile):
-    """Compute conditioning inputs from reference audio file."""
-    temp_audio_name = next(tempfile._get_candidate_names())
-    with open(temp_audio_name, "wb") as temp, torch.inference_mode():
-        temp.write(io.BytesIO(wav_file.file.read()).getbuffer())
-        gpt_cond_latent, speaker_embedding = model.get_conditioning_latents(
-            temp_audio_name
-        )
-    return {
-        "gpt_cond_latent": gpt_cond_latent.cpu().squeeze().half().tolist(),
-        "speaker_embedding": speaker_embedding.cpu().squeeze().half().tolist(),
-    }
+#writing the logger code:-connections
+logger = Log('handler.log')
+logger = logger.initialize_logger_handler()
+# @app.post("/clone_speaker")
+# def predict_speaker(wav_file: UploadFile):
+#     """Compute conditioning inputs from reference audio file."""
+#     temp_audio_name = next(tempfile._get_candidate_names())
+#     with open(temp_audio_name, "wb") as temp, torch.inference_mode():
+#         temp.write(io.BytesIO(wav_file.file.read()).getbuffer())
+#         gpt_cond_latent, speaker_embedding = model.get_conditioning_latents(
+#             temp_audio_name
+#         )
+#     return {
+#         "gpt_cond_latent": gpt_cond_latent.cpu().squeeze().half().tolist(),
+#         "speaker_embedding": speaker_embedding.cpu().squeeze().half().tolist(),
+#     }
 
 
 def postprocess(wav):
@@ -104,7 +109,7 @@ def encode_audio_common(
     if len(audio_data.shape) > 1:
         audio_data = audio_data.flatten()
 
-    print(f"Audio data shape: {audio_data.shape}, dtype: {audio_data.dtype}, min: {np.min(audio_data)}, max: {np.max(audio_data)}")
+    logger.info(f"Audio data shape: {audio_data.shape}, dtype: {audio_data.dtype}, min: {np.min(audio_data)}, max: {np.max(audio_data)}")
     
 
     if audio_data.dtype == np.int16:
@@ -128,9 +133,8 @@ def encode_audio_common(
             audio_bytes = resampled_audio.astype(np.float32).tobytes()
     
     audio_bytes_mu = audioop.lin2ulaw(audio_bytes, 2)
-    wav_base64 = base64.b64encode(audio_bytes_mu).decode()
-    return wav_base64
-
+    wave_64 = base64.b64encode(audio_bytes_mu).decode("utf-8")
+    return wave_64
 
 class StreamingInputs(BaseModel):
     speaker_embedding: List[float] = speaker["speaker_embedding"]
@@ -141,7 +145,7 @@ class StreamingInputs(BaseModel):
     stream_chunk_size: str = "20"
 
 
-def predict_streaming_generator(parsed_input: dict = Body(...)):
+def predict_streaming_generator(parsed_input):
     speaker_embedding = torch.tensor(parsed_input.speaker_embedding).unsqueeze(0).unsqueeze(-1)
     gpt_cond_latent = torch.tensor(parsed_input.gpt_cond_latent).reshape((-1, 1024)).unsqueeze(0)
     text = parsed_input.text
@@ -151,14 +155,14 @@ def predict_streaming_generator(parsed_input: dict = Body(...)):
     add_wav_header = parsed_input.add_wav_header
 
 
-    for chunks in model.inference_stream(
+    for i,chunks in enumerate(model.inference_stream(
         text,
         language,
         gpt_cond_latent,
         speaker_embedding,
         stream_chunk_size=stream_chunk_size,
         enable_text_splitting=True
-    ):
+    )):
         chunk = postprocess(chunks)
         processed_chunk = encode_audio_common(
             chunk, 
@@ -166,14 +170,52 @@ def predict_streaming_generator(parsed_input: dict = Body(...)):
             sample_rate=8000, 
             sample_width=2
         )
+        logger.infStreamSido(f"Processed chunk size:{i}// {len(processed_chunk)}")
         yield processed_chunk
+class WebSocketConnectionManagement:
+    def __init__(self):
+        self.active_connections: dict[str, WebSocket] = {}
 
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections[websocket.StreamSid] = websocket
 
-@app.post("/tts_stream")
-def predict_streaming_endpoint(parsed_input: StreamingInputs):
-    return StreamingResponse(
-        predict_streaming_generator(parsed_input)
-    )
+    async def disconnect(self, websocket: WebSocket):
+        del self.active_connections[websocket.StreamSid]
+
+    async def send_message(self, message: str):
+        for connection in self.active_connections.values():
+            await connection.send_text(message)
+
+@app.websocket("/tts_stream")
+async def predict_streaming_endpoint(parsed_input: WebSocket):
+    await parsed_input.accept()
+    print("WebSocket connection established")
+    connections[parsed_input.StreamSid] = parsed_input
+
+    try:
+
+        text = await parsed_input.receive_text()
+        logger.info(f"Received text: {text}")
+        input_data = StreamingInputs(text=text)
+
+        async 
+        for chunk in predict_streaming_generator(input_data):
+            logger.info("Sending chunk")
+            await parsed_input.send_json({"status": "processing", "chunk": chunk})
+        
+        # Send a completion message
+        logger.info("Sending completion message")
+        await parsed_input.send_json({"status": "completed"})
+    except WebSocketDisconnect:
+        logger.info("WebSocket connection closed")
+    except Exception as e:
+        logger.info(f"Error: {e}")
+        try:
+            await parsed_input.send_json({"error": str(e)})
+        except Exception as e:
+            logger.info(f"Error sending error message: {e}")
+
 
 class TTSInputs(BaseModel):
     speaker_embedding: List[float]

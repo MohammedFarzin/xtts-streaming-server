@@ -17,6 +17,7 @@ RUN pip uninstall transformers==4.36.0 -y
 RUN python -m pip install transformers==4.36.0
 
 COPY main.py .
+COPY default_speaker.json .
 
 #Mark this 1 if you have older card
 ENV NVIDIA_DISABLE_REQUIRE=0
