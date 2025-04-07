@@ -20,6 +20,8 @@ from TTS.tts.models.xtts import Xtts
 from TTS.utils.generic_utils import get_user_data_dir
 from TTS.utils.manage import ModelManager
 
+import websockets as web
+
 torch.set_num_threads(int(os.environ.get("NUM_THREADS", os.cpu_count())))
 device = torch.device("cuda" if os.environ.get("USE_CPU", "0") == "0" else "cpu")
 if not torch.cuda.is_available() and device == "cuda":
@@ -109,7 +111,7 @@ def encode_audio_common(
     if len(audio_data.shape) > 1:
         audio_data = audio_data.flatten()
 
-    logger.info(f"Audio data shape: {audio_data.shape}, dtype: {audio_data.dtype}, min: {np.min(audio_data)}, max: {np.max(audio_data)}")
+    # logger.info(f"Audio data shape: {audio_data.shape}, dtype: {audio_data.dtype}, min: {np.min(audio_data)}, max: {np.max(audio_data)}")
     
 
     if audio_data.dtype == np.int16:
@@ -190,29 +192,53 @@ class WebSocketConnectionManagement:
 @app.websocket("/tts_stream")
 async def predict_streaming_endpoint(parsed_input: WebSocket):
     await parsed_input.accept()
-    print("WebSocket connection established")
-    connections[parsed_input.StreamSid] = parsed_input
-
+    logger.info("WebSocket connection established")
+    
     try:
+        while True:
 
-        text = await parsed_input.receive_text()
-        logger.info(f"Received text: {text}")
-        input_data = StreamingInputs(text=text)
+            data_json = await parsed_input.receive_text()
+            data_json = json.loads(data_json)
 
-        async 
-        for chunk in predict_streaming_generator(input_data):
-            logger.info("Sending chunk")
-            await parsed_input.send_json({"status": "processing", "chunk": chunk})
-        
-        # Send a completion message
-        logger.info("Sending completion message")
-        await parsed_input.send_json({"status": "completed"})
+            if data_json["text"] is None:
+                parsed_input.close()
+                logger.info("Received empty text, closing connection")
+                break
+            
+
+            # Extract streamSid
+            if "streamSid" not in data_json:
+                logger.info("Missing streamSid in request")
+                await parsed_input.send_json({"error": "Missing streamSid"})
+                return
+            
+            connections[data_json["streamSid"]] = {"tts_ws": parsed_input}
+
+            logger.info(f"WebSocket connection ID: {data_json['streamSid']}, {parsed_input}")
+            logger.info(f"Received text: {data_json}")
+
+            input_data = StreamingInputs(text=data_json["text"])
+
+            async with web.connect("wss://8d64-49-207-214-218.ngrok-free.app/api/send_voice") as twilio_ws:
+                connections[data_json["streamSid"]] = {"twilio_ws": twilio_ws}
+
+                for chunk in predict_streaming_generator(input_data):
+                    logger.info("Sending chunk")
+                    await twilio_ws.send(json.dumps({"chunk": chunk}))
+                    logger.info(f"Websocket connection to twilio: \n{connections[data_json['streamSid']]}, \n{connections[data['streamSid']]['tts_ws']} == {parsed_input},  \n {connections[data['streamSid']]['twilio_ws']} == {twilio_ws}, ")
+
+                twilio_ws.close()
+            logger.info("Sending completion message")
+
     except WebSocketDisconnect:
         logger.info("WebSocket connection closed")
+        connections[data_json["streamSid"]]["tts_ws"].close()
+        del connections[data_json["streamSid"]]
+
     except Exception as e:
         logger.info(f"Error: {e}")
         try:
-            await parsed_input.send_json({"error": str(e)})
+            await connections[data_json["streamSid"]].send_json({"error": str(e)})
         except Exception as e:
             logger.info(f"Error sending error message: {e}")
 

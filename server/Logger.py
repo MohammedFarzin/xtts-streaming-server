@@ -15,7 +15,7 @@ class Log:
         file_handler = logging.FileHandler(self.path)
 
         # Set the level for handlers
-        console_handler.setLevel(logging.WARNING)
+        console_handler.setLevel(logging.INFO)
         file_handler.setLevel(logging.DEBUG)
 
         # Create formatters and add them to the handlers

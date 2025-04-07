@@ -1,159 +1,21 @@
-2025-04-03 10:33:38,263 - Logger - INFO - Received text: Hello! How can I assist you today with your student’s medical situation?
-2025-04-03 10:33:38,750 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -27099, max: 25200
-2025-04-03 10:33:38,750 - Logger - INFO - Sending chunk
-2025-04-03 10:33:39,048 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -28253, max: 26944
-2025-04-03 10:33:39,048 - Logger - INFO - Sending chunk
-2025-04-03 10:33:39,349 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -15201, max: 18907
-2025-04-03 10:33:39,349 - Logger - INFO - Sending chunk
-2025-04-03 10:33:39,647 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -12599, max: 14426
-2025-04-03 10:33:39,647 - Logger - INFO - Sending chunk
-2025-04-03 10:33:39,828 - Logger - INFO - Audio data shape: (11008,), dtype: int16, min: -9906, max: 13749
-2025-04-03 10:33:39,829 - Logger - INFO - Sending chunk
-2025-04-03 10:33:56,423 - Logger - INFO - Received text: Hi there! How can I help you today? Are you dealing with a student’s medical issue or need some advice?
-2025-04-03 10:33:56,698 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -27495, max: 24651
-2025-04-03 10:33:56,699 - Logger - INFO - Sending chunk
-2025-04-03 10:33:56,960 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -27430, max: 24611
-2025-04-03 10:33:56,960 - Logger - INFO - Sending chunk
-2025-04-03 10:33:57,231 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -20122, max: 22190
-2025-04-03 10:33:57,231 - Logger - INFO - Sending chunk
-2025-04-03 10:33:57,498 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -19556, max: 18200
-2025-04-03 10:33:57,499 - Logger - INFO - Sending chunk
-2025-04-03 10:33:57,812 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -15681, max: 17180
-2025-04-03 10:33:57,812 - Logger - INFO - Sending chunk
-2025-04-03 10:33:58,093 - Logger - INFO - Audio data shape: (19968,), dtype: int16, min: -22528, max: 21126
-2025-04-03 10:33:58,093 - Logger - INFO - Sending chunk
-2025-04-03 10:34:07,580 - Logger - INFO - Received text: I’m here and ready to assist you! Let me know how I can help with any student health concerns or questions you might have.
-2025-04-03 10:34:07,851 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -22528, max: 20689
-2025-04-03 10:34:07,851 - Logger - INFO - Sending chunk
-2025-04-03 10:34:08,105 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -17543, max: 18584
-2025-04-03 10:34:08,105 - Logger - INFO - Sending chunk
-2025-04-03 10:34:08,367 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -2157, max: 1725
-2025-04-03 10:34:08,368 - Logger - INFO - Sending chunk
-2025-04-03 10:34:08,635 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -24166, max: 23553
-2025-04-03 10:34:08,635 - Logger - INFO - Sending chunk
-2025-04-03 10:34:08,899 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -16574, max: 15697
-2025-04-03 10:34:08,899 - Logger - INFO - Sending chunk
-2025-04-03 10:34:09,200 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -17040, max: 12034
-2025-04-03 10:34:09,200 - Logger - INFO - Sending chunk
-2025-04-03 10:34:09,502 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -24452, max: 19100
-2025-04-03 10:34:09,502 - Logger - INFO - Sending chunk
-2025-04-03 10:34:09,755 - Logger - INFO - Audio data shape: (17920,), dtype: int16, min: -17362, max: 11875
-2025-04-03 10:34:09,755 - Logger - INFO - Sending chunk
-2025-04-03 10:56:13,404 - Logger - INFO - Received text: Hi there! How can I help you with a student's medical issue today?
-2025-04-03 10:56:13,890 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -20606, max: 21906
-2025-04-03 10:56:13,890 - Logger - INFO - Processed chunk size:0// 7082
-2025-04-03 10:56:13,891 - Logger - INFO - Sending chunk
-2025-04-03 10:56:14,189 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -27167, max: 24268
-2025-04-03 10:56:14,190 - Logger - INFO - Processed chunk size:1// 7424
-2025-04-03 10:56:14,190 - Logger - INFO - Sending chunk
-2025-04-03 10:56:14,490 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -23172, max: 24529
-2025-04-03 10:56:14,490 - Logger - INFO - Processed chunk size:2// 7424
-2025-04-03 10:56:14,490 - Logger - INFO - Sending chunk
-2025-04-03 10:56:14,789 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -14293, max: 13172
-2025-04-03 10:56:14,789 - Logger - INFO - Processed chunk size:3// 7424
-2025-04-03 10:56:14,789 - Logger - INFO - Sending chunk
-2025-04-03 10:56:14,874 - Logger - INFO - Audio data shape: (2304,), dtype: int16, min: -2521, max: 2032
-2025-04-03 10:56:14,875 - Logger - INFO - Processed chunk size:4// 768
-2025-04-03 10:56:14,875 - Logger - INFO - Sending chunk
-2025-04-03 10:56:14,875 - Logger - INFO - Sending completion message
-2025-04-03 10:56:25,648 - Logger - INFO - Received text: I apologize for any confusion, but it seems like there was a misunderstanding or a typo. Could you please clarify what you need help with regarding a student's medical situation? That way, I can assist you more effectively.
-2025-04-03 10:56:25,919 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -29530, max: 24241
-2025-04-03 10:56:25,920 - Logger - INFO - Processed chunk size:0// 7082
-2025-04-03 10:56:25,920 - Logger - INFO - Sending chunk
-2025-04-03 10:56:26,165 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -17437, max: 19425
-2025-04-03 10:56:26,165 - Logger - INFO - Processed chunk size:1// 7424
-2025-04-03 10:56:26,165 - Logger - INFO - Sending chunk
-2025-04-03 10:56:26,413 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -19852, max: 22742
-2025-04-03 10:56:26,413 - Logger - INFO - Processed chunk size:2// 7424
-2025-04-03 10:56:26,413 - Logger - INFO - Sending chunk
-2025-04-03 10:56:26,662 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -24754, max: 20267
-2025-04-03 10:56:26,663 - Logger - INFO - Processed chunk size:3// 7424
-2025-04-03 10:56:26,663 - Logger - INFO - Sending chunk
-2025-04-03 10:56:26,961 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -20996, max: 15431
-2025-04-03 10:56:26,961 - Logger - INFO - Processed chunk size:4// 7424
-2025-04-03 10:56:26,961 - Logger - INFO - Sending chunk
-2025-04-03 10:56:27,259 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -26217, max: 17813
-2025-04-03 10:56:27,259 - Logger - INFO - Processed chunk size:5// 7424
-2025-04-03 10:56:27,259 - Logger - INFO - Sending chunk
-2025-04-03 10:56:27,558 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -834, max: 818
-2025-04-03 10:56:27,558 - Logger - INFO - Processed chunk size:6// 7424
-2025-04-03 10:56:27,558 - Logger - INFO - Sending chunk
-2025-04-03 10:56:27,857 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -19323, max: 18769
-2025-04-03 10:56:27,858 - Logger - INFO - Processed chunk size:7// 7424
-2025-04-03 10:56:27,858 - Logger - INFO - Sending chunk
-2025-04-03 10:56:28,159 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -19096, max: 16326
-2025-04-03 10:56:28,159 - Logger - INFO - Processed chunk size:8// 7424
-2025-04-03 10:56:28,159 - Logger - INFO - Sending chunk
-2025-04-03 10:56:28,460 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -23045, max: 20306
-2025-04-03 10:56:28,461 - Logger - INFO - Processed chunk size:9// 7424
-2025-04-03 10:56:28,461 - Logger - INFO - Sending chunk
-2025-04-03 10:56:28,761 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -10826, max: 8646
-2025-04-03 10:56:28,761 - Logger - INFO - Processed chunk size:10// 7424
-2025-04-03 10:56:28,761 - Logger - INFO - Sending chunk
-2025-04-03 10:56:29,065 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -9744, max: 10542
-2025-04-03 10:56:29,065 - Logger - INFO - Processed chunk size:11// 7424
-2025-04-03 10:56:29,065 - Logger - INFO - Sending chunk
-2025-04-03 10:56:29,367 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -25771, max: 17230
-2025-04-03 10:56:29,368 - Logger - INFO - Processed chunk size:12// 7424
-2025-04-03 10:56:29,368 - Logger - INFO - Sending chunk
-2025-04-03 10:56:29,677 - Logger - INFO - Audio data shape: (22528,), dtype: int16, min: -29103, max: 25410
-2025-04-03 10:56:29,677 - Logger - INFO - Processed chunk size:13// 7509
-2025-04-03 10:56:29,677 - Logger - INFO - Sending chunk
-2025-04-03 10:56:29,989 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -15036, max: 16200
-2025-04-03 10:56:29,989 - Logger - INFO - Processed chunk size:14// 7424
-2025-04-03 10:56:29,989 - Logger - INFO - Sending chunk
-2025-04-03 10:56:30,211 - Logger - INFO - Audio data shape: (13312,), dtype: int16, min: -8647, max: 12441
-2025-04-03 10:56:30,211 - Logger - INFO - Processed chunk size:15// 4437
-2025-04-03 10:56:30,211 - Logger - INFO - Sending chunk
-2025-04-03 10:56:30,212 - Logger - INFO - Sending completion message
-2025-04-03 11:04:49,875 - Logger - INFO - Received text: Hello! How can I assist you with your student's medical situation today?
-2025-04-03 11:04:50,366 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -26598, max: 26736
-2025-04-03 11:04:50,367 - Logger - INFO - Processed chunk size:0// 9444
-2025-04-03 11:04:50,367 - Logger - INFO - Sending chunk
-2025-04-03 11:04:50,668 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -27080, max: 25744
-2025-04-03 11:04:50,668 - Logger - INFO - Processed chunk size:1// 9900
-2025-04-03 11:04:50,668 - Logger - INFO - Sending chunk
-2025-04-03 11:04:50,983 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -18695, max: 15724
-2025-04-03 11:04:50,983 - Logger - INFO - Processed chunk size:2// 9900
-2025-04-03 11:04:50,983 - Logger - INFO - Sending chunk
-2025-04-03 11:04:51,283 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -22713, max: 25971
-2025-04-03 11:04:51,283 - Logger - INFO - Processed chunk size:3// 9900
-2025-04-03 11:04:51,283 - Logger - INFO - Sending chunk
-2025-04-03 11:04:51,584 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -13564, max: 13753
-2025-04-03 11:04:51,585 - Logger - INFO - Processed chunk size:4// 9900
-2025-04-03 11:04:51,585 - Logger - INFO - Sending chunk
-2025-04-03 11:04:51,742 - Logger - INFO - Audio data shape: (8960,), dtype: int16, min: -15989, max: 15113
-2025-04-03 11:04:51,743 - Logger - INFO - Processed chunk size:5// 3984
-2025-04-03 11:04:51,743 - Logger - INFO - Sending chunk
-2025-04-03 11:04:51,743 - Logger - INFO - Sending completion message
-2025-04-03 11:05:00,338 - Logger - INFO - Received text: Hello! How can I help you with a student's medical needs today?
-2025-04-03 11:05:00,612 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -19459, max: 22080
-2025-04-03 11:05:00,612 - Logger - INFO - Processed chunk size:0// 9444
-2025-04-03 11:05:00,612 - Logger - INFO - Sending chunk
-2025-04-03 11:05:00,860 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -20677, max: 21110
-2025-04-03 11:05:00,861 - Logger - INFO - Processed chunk size:1// 9900
-2025-04-03 11:05:00,861 - Logger - INFO - Sending chunk
-2025-04-03 11:05:01,115 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -16293, max: 22910
-2025-04-03 11:05:01,116 - Logger - INFO - Processed chunk size:2// 9900
-2025-04-03 11:05:01,116 - Logger - INFO - Sending chunk
-2025-04-03 11:05:01,381 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -16084, max: 19713
-2025-04-03 11:05:01,382 - Logger - INFO - Processed chunk size:3// 9900
-2025-04-03 11:05:01,382 - Logger - INFO - Sending chunk
-2025-04-03 11:05:01,649 - Logger - INFO - Audio data shape: (18944,), dtype: int16, min: -13667, max: 12463
-2025-04-03 11:05:01,649 - Logger - INFO - Processed chunk size:4// 8420
-2025-04-03 11:05:01,649 - Logger - INFO - Sending chunk
-2025-04-03 11:05:01,649 - Logger - INFO - Sending completion message
-2025-04-03 11:06:00,968 - Logger - INFO - Received text: Hello! How can I assist you today with the student's medical needs?
-2025-04-03 11:06:01,251 - Logger - INFO - Audio data shape: (21248,), dtype: int16, min: -25067, max: 26804
-2025-04-03 11:06:01,252 - Logger - INFO - Processed chunk size:0// 9444
-2025-04-03 11:06:01,252 - Logger - INFO - Sending chunk
-2025-04-03 11:06:01,497 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -17445, max: 19502
-2025-04-03 11:06:01,497 - Logger - INFO - Processed chunk size:1// 9900
-2025-04-03 11:06:01,498 - Logger - INFO - Sending chunk
-2025-04-03 11:06:01,745 - Logger - INFO - Audio data shape: (22272,), dtype: int16, min: -18127, max: 17759
-2025-04-03 11:06:01,745 - Logger - INFO - Processed chunk size:2// 9900
-2025-04-03 11:06:01,745 - Logger - INFO - Sending chunk
-2025-04-03 11:06:02,034 - Logger - INFO - Audio data shape: (20992,), dtype: int16, min: -17722, max: 19292
-2025-04-03 11:06:02,034 - Logger - INFO - Processed chunk size:3// 9332
-2025-04-03 11:06:02,034 - Logger - INFO - Sending chunk
-2025-04-03 11:06:02,035 - Logger - INFO - Sending completion message
+2025-04-04 14:10:11,417 - Logger - INFO - WebSocket connection established
+2025-04-04 14:10:12,027 - Logger - INFO - WebSocket connection ID: MZce78fcfc390a3a14db506a3def304b68, <starlette.websockets.WebSocket object at 0x7e2f6919b7f0>
+2025-04-04 14:10:12,027 - Logger - INFO - Received text: {'text': 'Hello', 'streamSid': 'MZce78fcfc390a3a14db506a3def304b68'}
+2025-04-04 14:10:12,042 - Logger - INFO - Error: https://8d64-49-207-214-218.ngrok-free.app/api/send_voice isn't a valid URI: scheme isn't ws or wss
+2025-04-04 14:10:12,042 - Logger - INFO - Error sending error message: 'dict' object has no attribute 'send_json'
+2025-04-04 14:13:24,278 - Logger - INFO - WebSocket connection established
+2025-04-04 14:13:25,525 - Logger - INFO - WebSocket connection ID: MZ5dd268b6d292a6b53d81d1d8a4ea851e, <starlette.websockets.WebSocket object at 0x732849823be0>
+2025-04-04 14:13:25,525 - Logger - INFO - Received text: {'text': 'Hello', 'streamSid': 'MZ5dd268b6d292a6b53d81d1d8a4ea851e'}
+2025-04-04 14:13:26,616 - Logger - INFO - Audio data shape: (18944,), dtype: int16, min: -15096, max: 17445
+2025-04-04 14:13:26,671 - Logger - INFO - Error: 'Logger' object has no attribute 'infStreamSido'
+2025-04-04 14:13:26,671 - Logger - INFO - Error sending error message: 'dict' object has no attribute 'send_json'
+2025-04-04 14:16:36,861 - Logger - INFO - WebSocket connection established
+2025-04-04 14:16:37,560 - Logger - INFO - WebSocket connection ID: MZ4205aeed0a5d4c558ef4a611da6a5dfb, <starlette.websockets.WebSocket object at 0x72d9830277f0>
+2025-04-04 14:16:37,560 - Logger - INFO - Received text: {'text': 'Hello', 'streamSid': 'MZ4205aeed0a5d4c558ef4a611da6a5dfb'}
+2025-04-04 14:16:38,220 - Logger - INFO - Error: 'Logger' object has no attribute 'infStreamSido'
+2025-04-04 14:16:38,220 - Logger - INFO - Error sending error message: 'dict' object has no attribute 'send_json'
+2025-04-04 14:17:08,402 - Logger - INFO - WebSocket connection established
+2025-04-04 14:17:09,090 - Logger - INFO - WebSocket connection ID: MZ4205aeed0a5d4c558ef4a611da6a5dfb, <starlette.websockets.WebSocket object at 0x72d98406e7a0>
+2025-04-04 14:17:09,090 - Logger - INFO - Received text: {'text': 'No', 'streamSid': 'MZ4205aeed0a5d4c558ef4a611da6a5dfb'}
+2025-04-04 14:17:09,531 - Logger - INFO - Error: 'Logger' object has no attribute 'infStreamSido'
+2025-04-04 14:17:09,531 - Logger - INFO - Error sending error message: 'dict' object has no attribute 'send_json'
