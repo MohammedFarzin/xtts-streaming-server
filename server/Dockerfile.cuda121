@@ -7,14 +7,37 @@ RUN apt-get update && \
 
 WORKDIR /app
 COPY requirements.txt .
-RUN python -m pip install --use-deprecated=legacy-resolver -r requirements.txt \
-    && python -m pip cache purge
+
+# First install base dependencies without TTS
+RUN pip install --no-cache-dir \
+    scipy==1.15.2 \
+    uvicorn[standard]==0.23.2 \
+    fastapi==0.95.2 \
+    deepspeed==0.10.3 \
+    pydantic==1.10.13 \
+    python-multipart==0.0.6 \
+    typing-extensions>=4.8.0 \
+    numpy==1.24.3 \
+    cutlet \
+    mecab-python3==1.0.6 \
+    unidic-lite==1.0.8 \
+    unidic==1.1.0 \
+    websocket-client==1.8.0 \
+    websockets==13.1 \
+    aioredis==2.0.1 \
+    redis==5.1.0
+
+# Install compatible versions of spacy and thinc
+RUN pip install --no-cache-dir spacy==3.5.3 thinc==8.1.10
+RUN pip install --no-cache-dir git+https://github.com/coqui-ai/TTS@fa28f99f1508b5b5366539b2149963edcb80ba62
+RUN pip uninstall transformers==4.36.0 -y
+RUN python -m pip install transformers==4.36.0
+
 
 RUN python -m unidic download
 RUN mkdir -p /app/tts_models
 
-RUN pip uninstall transformers==4.36.0 -y
-RUN python -m pip install transformers==4.36.0
+
 
 COPY main.py .
 COPY default_speaker.json .

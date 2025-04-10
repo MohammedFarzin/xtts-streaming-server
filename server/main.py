@@ -11,6 +11,8 @@ from pydantic import BaseModel
 from scipy import signal
 import audioop
 from Logger import Log
+import time
+import traceback
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, UploadFile
 from fastapi.responses import StreamingResponse
@@ -52,7 +54,7 @@ with open("./default_speaker.json", "r") as file:
     speaker = json.load(file)
 
 global connections
-connections: dict[str, WebSocket] = {}
+connections = {}
 
 print("Running XTTS Server ...", flush=True)
 
@@ -67,19 +69,7 @@ app = FastAPI(
 #writing the logger code:-connections
 logger = Log('handler.log')
 logger = logger.initialize_logger_handler()
-# @app.post("/clone_speaker")
-# def predict_speaker(wav_file: UploadFile):
-#     """Compute conditioning inputs from reference audio file."""
-#     temp_audio_name = next(tempfile._get_candidate_names())
-#     with open(temp_audio_name, "wb") as temp, torch.inference_mode():
-#         temp.write(io.BytesIO(wav_file.file.read()).getbuffer())
-#         gpt_cond_latent, speaker_embedding = model.get_conditioning_latents(
-#             temp_audio_name
-#         )
-#     return {
-#         "gpt_cond_latent": gpt_cond_latent.cpu().squeeze().half().tolist(),
-#         "speaker_embedding": speaker_embedding.cpu().squeeze().half().tolist(),
-#     }
+
 
 
 def postprocess(wav):
@@ -145,142 +135,158 @@ class StreamingInputs(BaseModel):
     language: str = "en"
     add_wav_header: bool = False
     stream_chunk_size: str = "20"
+    stream_id: str
+
+# Add this at the top of your file with other imports
+from contextlib import contextmanager
+
+@contextmanager
+def timing_context(name):
+    """Context manager to measure execution time of a code block"""
+    start_time = time.time()
+    yield
+    elapsed = time.time() - start_time
+    logger.info(f"TIMING: {name} took {elapsed:.4f} seconds")
+
 
 
 def predict_streaming_generator(parsed_input):
-    speaker_embedding = torch.tensor(parsed_input.speaker_embedding).unsqueeze(0).unsqueeze(-1)
-    gpt_cond_latent = torch.tensor(parsed_input.gpt_cond_latent).reshape((-1, 1024)).unsqueeze(0)
-    text = parsed_input.text
-    language = parsed_input.language
+    total_inference_time = 0
+    total_postprocess_time = 0
+    total_encode_time = 0
+    chunk_count = 0
+    
+    with timing_context("TTS Generation (total)"):
+        speaker_embedding = torch.tensor(parsed_input.speaker_embedding).unsqueeze(0).unsqueeze(-1)
+        gpt_cond_latent = torch.tensor(parsed_input.gpt_cond_latent).reshape((-1, 1024)).unsqueeze(0)
+        text = parsed_input.text
+        language = parsed_input.language
 
-    stream_chunk_size = int(parsed_input.stream_chunk_size)
-    add_wav_header = parsed_input.add_wav_header
+        stream_chunk_size = int(parsed_input.stream_chunk_size)
+        add_wav_header = parsed_input.add_wav_header
+        
+        logger.info(f"Starting TTS generation for text: '{text}' (length: {len(text)})")
 
-
-    for i,chunks in enumerate(model.inference_stream(
-        text,
-        language,
-        gpt_cond_latent,
-        speaker_embedding,
-        stream_chunk_size=stream_chunk_size,
-        enable_text_splitting=True
-    )):
-        chunk = postprocess(chunks)
-        processed_chunk = encode_audio_common(
-            chunk, 
-            encode_base64=False, 
-            sample_rate=8000, 
-            sample_width=2
+        # Use the generator from model.inference_stream
+        stream_generator = model.inference_stream(
+            text,
+            language,
+            gpt_cond_latent,
+            speaker_embedding,
+            stream_chunk_size=stream_chunk_size,
+            enable_text_splitting=True
         )
-        logger.infStreamSido(f"Processed chunk size:{i}// {len(processed_chunk)}")
-        yield processed_chunk
-class WebSocketConnectionManagement:
-    def __init__(self):
-        self.active_connections: dict[str, WebSocket] = {}
 
-    async def connect(self, websocket: WebSocket):
-        await websocket.accept()
-        self.active_connections[websocket.StreamSid] = websocket
+        for i, chunks in enumerate(stream_generator):
+            chunk_count += 1
+            
+            # Measure postprocessing time
+            with timing_context(f"Postprocessing chunk {i}"):
+                start_time = time.time()
+                chunk = postprocess(chunks)
+                elapsed = time.time() - start_time
+                total_postprocess_time += elapsed
+            
+            # Measure encoding time
+            with timing_context(f"Encoding chunk {i}"):
+                start_time = time.time()
+                processed_chunk = encode_audio_common(
+                    chunk, 
+                    encode_base64=False, 
+                    sample_rate=8000, 
+                    sample_width=2
+                )
+                elapsed = time.time() - start_time
+                total_encode_time += elapsed
+            
+            logger.info(f"Processed chunk size:{i}// {len(processed_chunk)}")
+            yield processed_chunk
+        
+        # Log summary statistics
+        if chunk_count > 0:
+            logger.info(f"PERFORMANCE SUMMARY:")
+            logger.info(f"- Total chunks processed: {chunk_count}")
+            logger.info(f"- Average postprocessing time: {total_postprocess_time/chunk_count:.4f}s per chunk")
+            logger.info(f"- Average encoding time: {total_encode_time/chunk_count:.4f}s per chunk")
+            logger.info(f"- Total postprocessing time: {total_postprocess_time:.4f}s")
+            logger.info(f"- Total encoding time: {total_encode_time:.4f}s")
+            # Inference time is the remainder
+            total_time = time.time() - start_time
+            inference_time = total_time - total_postprocess_time - total_encode_time
+            logger.info(f"- Estimated inference time: {inference_time:.4f}s ({inference_time/total_time*100:.2f}%)")
 
-    async def disconnect(self, websocket: WebSocket):
-        del self.active_connections[websocket.StreamSid]
+        
 
-    async def send_message(self, message: str):
-        for connection in self.active_connections.values():
-            await connection.send_text(message)
 
 @app.websocket("/tts_stream")
 async def predict_streaming_endpoint(parsed_input: WebSocket):
-    await parsed_input.accept()
-    logger.info("WebSocket connection established")
-    
-    try:
-        while True:
-
-            data_json = await parsed_input.receive_text()
-            data_json = json.loads(data_json)
+    with timing_context("WebSocket connection lifetime"):
+        await parsed_input.accept()
+        logger.info("WebSocket connection established")
+        
+        try:
+            with timing_context("WebSocket data receive"):
+                data_json = await parsed_input.receive_text()
+                data_json = json.loads(data_json)
 
             if data_json["text"] is None:
                 parsed_input.close()
-                logger.info("Received empty text, closing connection")
-                break
-            
+                logger.info(f"Received empty text, closing connection for {data_json['stream_id']}")
+                return
 
-            # Extract streamSid
-            if "streamSid" not in data_json:
-                logger.info("Missing streamSid in request")
-                await parsed_input.send_json({"error": "Missing streamSid"})
+            # Extract stream_id
+            if "stream_id" not in data_json:
+                logger.info("Missing stream_id in request")
+                await parsed_input.send_json({"error": "Missing stream_id"})
                 return
             
-            connections[data_json["streamSid"]] = {"tts_ws": parsed_input}
+            connections[data_json["stream_id"]] = parsed_input
 
-            logger.info(f"WebSocket connection ID: {data_json['streamSid']}, {parsed_input}")
-            logger.info(f"Received text: {data_json}")
+            logger.info(f"WebSocket connection ID: {data_json['stream_id']}, {parsed_input}, {data_json}")
+            input_data = StreamingInputs(
+                text=data_json["text"],
+                stream_id=data_json["stream_id"]
+            )
 
-            input_data = StreamingInputs(text=data_json["text"])
-
-            async with web.connect("wss://8d64-49-207-214-218.ngrok-free.app/api/send_voice") as twilio_ws:
-                connections[data_json["streamSid"]] = {"twilio_ws": twilio_ws}
-
+            chunk_count = 0
+            total_send_time = 0.0
+            
+            with timing_context("Full TTS processing and sending"):
                 for chunk in predict_streaming_generator(input_data):
-                    logger.info("Sending chunk")
-                    await twilio_ws.send(json.dumps({"chunk": chunk}))
-                    logger.info(f"Websocket connection to twilio: \n{connections[data_json['streamSid']]}, \n{connections[data['streamSid']]['tts_ws']} == {parsed_input},  \n {connections[data['streamSid']]['twilio_ws']} == {twilio_ws}, ")
-
-                twilio_ws.close()
+                    chunk_count += 1
+                    with timing_context(f"Sending chunk {chunk_count}"):
+                        start_time = time.time()
+                        await connections[data_json["stream_id"]].send_json({"chunk": chunk})
+                        elapsed = time.time() - start_time
+                        total_send_time += elapsed
+                        logger.info(f"Sent chunk {chunk_count}, size: {len(chunk)}")
+            
+            if chunk_count > 0:
+                logger.info(f"Avg send time: {total_send_time/chunk_count:.4f}s per chunk")
+                
+            await connections[data_json["stream_id"]].send_json({"status": "completed"})
             logger.info("Sending completion message")
+        except WebSocketDisconnect:
+            logger.info(f"WebSocket connection closed and deleted: {data_json['stream_id']}")
+            connections[data_json["stream_id"]].close()
+            del connections[data_json["stream_id"]]
 
-    except WebSocketDisconnect:
-        logger.info("WebSocket connection closed")
-        connections[data_json["streamSid"]]["tts_ws"].close()
-        del connections[data_json["streamSid"]]
-
-    except Exception as e:
-        logger.info(f"Error: {e}")
-        try:
-            await connections[data_json["streamSid"]].send_json({"error": str(e)})
         except Exception as e:
-            logger.info(f"Error sending error message: {e}")
+            logger.info(f"Error: {e}")
+            logger.error("Traceback:\n" + traceback.format_exc())  
+            try:
+                await connections[data_json["stream_id"]].send_json({"error": str(e)})
+            except Exception as e:
+                logger.info(f"Error sending error message: {e}")
+                logger.error("Traceback:\n" + traceback.format_exc())  
 
-
-class TTSInputs(BaseModel):
-    speaker_embedding: List[float]
-    gpt_cond_latent: List[List[float]]
-    text: str
-    language: str
-
-@app.post("/tts")
-def predict_speech(parsed_input: TTSInputs):
-    speaker_embedding = torch.tensor(parsed_input.speaker_embedding).unsqueeze(0).unsqueeze(-1)
-    gpt_cond_latent = torch.tensor(parsed_input.gpt_cond_latent).reshape((-1, 1024)).unsqueeze(0)
-    text = parsed_input.text
-    language = parsed_input.language
-
-    out = model.inference(
-        text,
-        language,
-        gpt_cond_latent,
-        speaker_embedding,
-    )
-
-    wav = postprocess(torch.tensor(out["wav"]))
-
-    return encode_audio_common(wav.tobytes())
-
-
-@app.get("/studio_speakers")
-def get_speakers():
-    if hasattr(model, "speaker_manager") and hasattr(model.speaker_manager, "speakers"):
-        return {
-            speaker: {
-                "speaker_embedding": model.speaker_manager.speakers[speaker]["speaker_embedding"].cpu().squeeze().half().tolist(),
-                "gpt_cond_latent": model.speaker_manager.speakers[speaker]["gpt_cond_latent"].cpu().squeeze().half().tolist(),
-            }
-            for speaker in model.speaker_manager.speakers.keys()
-        }
-    else:
-        return {}
-        
-@app.get("/languages")
-def get_languages():
-    return config.languages
+@app.post("/stop_stream/{stream_id}")
+async def stop_stream(stream_id: str):
+    if stream_id not in connections:
+        return {"message": "Stream not found or already completed", "status": "error"}
+    
+    # Set the stop flag for this stream
+    connections[stream_id]["voice_stop"] = True
+    logger.info(f"Stop request received for stream_id: {stream_id}")
+    
+    return {"message": f"Stop request for stream {stream_id} received", "status": "success"}

@@ -19,3 +19,1082 @@
 2025-04-04 14:17:09,090 - Logger - INFO - Received text: {'text': 'No', 'streamSid': 'MZ4205aeed0a5d4c558ef4a611da6a5dfb'}
 2025-04-04 14:17:09,531 - Logger - INFO - Error: 'Logger' object has no attribute 'infStreamSido'
 2025-04-04 14:17:09,531 - Logger - INFO - Error sending error message: 'dict' object has no attribute 'send_json'
+2025-04-07 20:09:06,033 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:29:35,662 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:29:35,665 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:29:36,051 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 20:29:36,051 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:36,466 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 20:29:36,467 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:36,909 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 20:29:36,910 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:37,067 - Logger - INFO - Processed chunk size:4// 1024
+2025-04-07 20:29:37,068 - Logger - INFO - Sent chunk size:1024
+2025-04-07 20:29:37,166 - Logger - INFO - Closed connection for stream_id: MZb1d40a97204c185866ac4720da74819f
+2025-04-07 20:29:54,445 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:29:54,445 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:29:54,834 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 20:29:54,834 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:55,247 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 20:29:55,248 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:55,691 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 20:29:55,692 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:56,163 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 20:29:56,164 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:56,667 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 20:29:56,668 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:57,198 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 20:29:57,199 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:57,760 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 20:29:57,761 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:58,084 - Logger - INFO - Processed chunk size:8// 2504
+2025-04-07 20:29:58,084 - Logger - INFO - Sent chunk size:2504
+2025-04-07 20:29:58,527 - Logger - INFO - Processed chunk size:9// 9444
+2025-04-07 20:29:58,528 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:29:58,916 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-07 20:29:58,917 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:59,333 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-07 20:29:59,334 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:29:59,781 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-07 20:29:59,782 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:00,255 - Logger - INFO - Processed chunk size:13// 9900
+2025-04-07 20:30:00,256 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:00,761 - Logger - INFO - Processed chunk size:14// 9900
+2025-04-07 20:30:00,762 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:01,295 - Logger - INFO - Processed chunk size:15// 9900
+2025-04-07 20:30:01,296 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:01,859 - Logger - INFO - Processed chunk size:16// 9900
+2025-04-07 20:30:01,859 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:02,452 - Logger - INFO - Processed chunk size:17// 9900
+2025-04-07 20:30:02,453 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:03,079 - Logger - INFO - Processed chunk size:18// 9900
+2025-04-07 20:30:03,080 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:03,734 - Logger - INFO - Processed chunk size:19// 9900
+2025-04-07 20:30:03,735 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:04,421 - Logger - INFO - Processed chunk size:20// 9900
+2025-04-07 20:30:04,422 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:05,135 - Logger - INFO - Processed chunk size:21// 9900
+2025-04-07 20:30:05,136 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:05,619 - Logger - INFO - Processed chunk size:22// 3072
+2025-04-07 20:30:05,620 - Logger - INFO - Sent chunk size:3072
+2025-04-07 20:30:06,063 - Logger - INFO - Processed chunk size:23// 9444
+2025-04-07 20:30:06,064 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:30:06,452 - Logger - INFO - Processed chunk size:24// 9900
+2025-04-07 20:30:06,452 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:06,867 - Logger - INFO - Processed chunk size:25// 9900
+2025-04-07 20:30:06,868 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:07,313 - Logger - INFO - Processed chunk size:26// 9900
+2025-04-07 20:30:07,313 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:07,787 - Logger - INFO - Processed chunk size:27// 9900
+2025-04-07 20:30:07,788 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:08,293 - Logger - INFO - Processed chunk size:28// 9900
+2025-04-07 20:30:08,294 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:08,827 - Logger - INFO - Processed chunk size:29// 9900
+2025-04-07 20:30:08,828 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:09,390 - Logger - INFO - Processed chunk size:30// 9900
+2025-04-07 20:30:09,391 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:09,985 - Logger - INFO - Processed chunk size:31// 9900
+2025-04-07 20:30:09,986 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:10,618 - Logger - INFO - Processed chunk size:32// 9900
+2025-04-07 20:30:10,619 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:11,276 - Logger - INFO - Processed chunk size:33// 9900
+2025-04-07 20:30:11,277 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:11,634 - Logger - INFO - Processed chunk size:34// 1024
+2025-04-07 20:30:11,634 - Logger - INFO - Sent chunk size:1024
+2025-04-07 20:30:11,686 - Logger - INFO - Closed connection for stream_id: MZb1d40a97204c185866ac4720da74819f
+2025-04-07 20:30:34,595 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:30:34,596 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:30:34,987 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 20:30:34,988 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:35,404 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 20:30:35,405 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:35,852 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 20:30:35,852 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:36,327 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 20:30:36,328 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:36,834 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 20:30:36,835 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:37,370 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 20:30:37,371 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:37,941 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 20:30:37,942 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:38,536 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-07 20:30:38,537 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:39,172 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-07 20:30:39,174 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:39,828 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-07 20:30:39,829 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:40,518 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-07 20:30:40,519 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:41,239 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-07 20:30:41,240 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:41,991 - Logger - INFO - Processed chunk size:13// 10012
+2025-04-07 20:30:41,992 - Logger - INFO - Sent chunk size:10012
+2025-04-07 20:30:42,642 - Logger - INFO - Processed chunk size:14// 6372
+2025-04-07 20:30:42,642 - Logger - INFO - Sent chunk size:6372
+2025-04-07 20:30:43,116 - Logger - INFO - Processed chunk size:15// 9444
+2025-04-07 20:30:43,117 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:30:43,519 - Logger - INFO - Processed chunk size:16// 9900
+2025-04-07 20:30:43,520 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:43,945 - Logger - INFO - Processed chunk size:17// 9900
+2025-04-07 20:30:43,946 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:44,393 - Logger - INFO - Processed chunk size:18// 9900
+2025-04-07 20:30:44,394 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:44,874 - Logger - INFO - Processed chunk size:19// 9900
+2025-04-07 20:30:44,875 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:45,394 - Logger - INFO - Processed chunk size:20// 9900
+2025-04-07 20:30:45,395 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:45,940 - Logger - INFO - Processed chunk size:21// 9900
+2025-04-07 20:30:45,941 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:46,507 - Logger - INFO - Processed chunk size:22// 9900
+2025-04-07 20:30:46,508 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:47,101 - Logger - INFO - Processed chunk size:23// 9900
+2025-04-07 20:30:47,102 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:47,728 - Logger - INFO - Processed chunk size:24// 9900
+2025-04-07 20:30:47,729 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:48,385 - Logger - INFO - Processed chunk size:25// 9900
+2025-04-07 20:30:48,386 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:49,073 - Logger - INFO - Processed chunk size:26// 9900
+2025-04-07 20:30:49,074 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:49,783 - Logger - INFO - Processed chunk size:27// 9900
+2025-04-07 20:30:49,784 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:30:50,304 - Logger - INFO - Processed chunk size:28// 3984
+2025-04-07 20:30:50,305 - Logger - INFO - Sent chunk size:3984
+2025-04-07 20:30:50,410 - Logger - INFO - Closed connection for stream_id: MZb1d40a97204c185866ac4720da74819f
+2025-04-07 20:31:02,314 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:31:02,315 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:31:02,708 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 20:31:02,709 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:03,133 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 20:31:03,134 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:03,578 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 20:31:03,579 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:04,052 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 20:31:04,053 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:04,557 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 20:31:04,558 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:04,843 - Logger - INFO - Processed chunk size:6// 2960
+2025-04-07 20:31:04,843 - Logger - INFO - Sent chunk size:2960
+2025-04-07 20:31:04,934 - Logger - INFO - Closed connection for stream_id: MZb1d40a97204c185866ac4720da74819f
+2025-04-07 20:31:24,789 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:31:24,790 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:31:25,186 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 20:31:25,187 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:25,614 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 20:31:25,615 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:26,064 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 20:31:26,065 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:26,543 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 20:31:26,544 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:27,057 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 20:31:27,057 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:27,601 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 20:31:27,602 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:28,170 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 20:31:28,171 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:28,770 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-07 20:31:28,771 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:29,405 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-07 20:31:29,406 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:30,067 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-07 20:31:30,067 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:30,768 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-07 20:31:30,769 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:31,497 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-07 20:31:31,498 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:32,157 - Logger - INFO - Processed chunk size:13// 7512
+2025-04-07 20:31:32,158 - Logger - INFO - Sent chunk size:7512
+2025-04-07 20:31:32,607 - Logger - INFO - Processed chunk size:14// 9444
+2025-04-07 20:31:32,608 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:31:33,000 - Logger - INFO - Processed chunk size:15// 9900
+2025-04-07 20:31:33,001 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:33,423 - Logger - INFO - Processed chunk size:16// 9900
+2025-04-07 20:31:33,423 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:33,875 - Logger - INFO - Processed chunk size:17// 9900
+2025-04-07 20:31:33,876 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:34,357 - Logger - INFO - Processed chunk size:18// 9900
+2025-04-07 20:31:34,358 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:34,866 - Logger - INFO - Processed chunk size:19// 9900
+2025-04-07 20:31:34,867 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:35,407 - Logger - INFO - Processed chunk size:20// 9900
+2025-04-07 20:31:35,408 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:35,985 - Logger - INFO - Processed chunk size:21// 9900
+2025-04-07 20:31:35,986 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:36,582 - Logger - INFO - Processed chunk size:22// 9900
+2025-04-07 20:31:36,583 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:37,213 - Logger - INFO - Processed chunk size:23// 9900
+2025-04-07 20:31:37,214 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:37,886 - Logger - INFO - Processed chunk size:24// 9900
+2025-04-07 20:31:37,886 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:38,575 - Logger - INFO - Processed chunk size:25// 9900
+2025-04-07 20:31:38,576 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:39,195 - Logger - INFO - Processed chunk size:26// 6940
+2025-04-07 20:31:39,196 - Logger - INFO - Sent chunk size:6940
+2025-04-07 20:31:39,308 - Logger - INFO - Closed connection for stream_id: MZb1d40a97204c185866ac4720da74819f
+2025-04-07 20:31:39,811 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 20:31:39,812 - Logger - INFO - Sent chunk size:9444
+2025-04-07 20:31:40,203 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 20:31:40,204 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:40,621 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 20:31:40,621 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:41,067 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 20:31:41,068 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:41,547 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 20:31:41,548 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:42,055 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 20:31:42,056 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:42,592 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 20:31:42,593 - Logger - INFO - Sent chunk size:9900
+2025-04-07 20:31:42,856 - Logger - INFO - Processed chunk size:7// 1480
+2025-04-07 20:31:42,856 - Logger - INFO - Sent chunk size:1480
+2025-04-07 20:31:42,960 - Logger - INFO - Closed connection for stream_id: MZb1d40a97204c185866ac4720da74819f
+2025-04-07 21:36:35,037 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 21:36:35,038 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:36:35,443 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 21:36:35,444 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:35,869 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 21:36:35,870 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:36,314 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 21:36:36,315 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:36,791 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 21:36:36,792 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:37,299 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 21:36:37,300 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:37,840 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 21:36:37,841 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:38,405 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 21:36:38,406 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:36:38,853 - Logger - INFO - Processed chunk size:8// 5916
+2025-04-07 21:36:38,853 - Logger - INFO - Sent chunk size:5916
+2025-04-07 21:36:38,854 - Logger - INFO - Closed connection for stream_id: MZ568a484abb61070fb58bd9a7fe0fc47a
+2025-04-07 21:36:59,618 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 21:36:59,618 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:37:00,023 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 21:37:00,023 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:00,455 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 21:37:00,456 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:00,910 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 21:37:00,911 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:01,387 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 21:37:01,388 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:01,895 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 21:37:01,896 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:02,432 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 21:37:02,433 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:03,000 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 21:37:03,001 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:03,596 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-07 21:37:03,597 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:04,227 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-07 21:37:04,229 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:04,888 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-07 21:37:04,889 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:05,574 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-07 21:37:05,575 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:06,293 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-07 21:37:06,294 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:07,019 - Logger - INFO - Processed chunk size:13// 9444
+2025-04-07 21:37:07,020 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:37:07,467 - Logger - INFO - Processed chunk size:14// 9444
+2025-04-07 21:37:07,468 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:37:07,856 - Logger - INFO - Processed chunk size:15// 9900
+2025-04-07 21:37:07,857 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:08,274 - Logger - INFO - Processed chunk size:16// 9900
+2025-04-07 21:37:08,275 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:08,720 - Logger - INFO - Processed chunk size:17// 9900
+2025-04-07 21:37:08,721 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:09,198 - Logger - INFO - Processed chunk size:18// 9900
+2025-04-07 21:37:09,199 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:09,709 - Logger - INFO - Processed chunk size:19// 9900
+2025-04-07 21:37:09,710 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:10,247 - Logger - INFO - Processed chunk size:20// 9900
+2025-04-07 21:37:10,248 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:10,815 - Logger - INFO - Processed chunk size:21// 9900
+2025-04-07 21:37:10,816 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:11,409 - Logger - INFO - Processed chunk size:22// 9900
+2025-04-07 21:37:11,409 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:12,039 - Logger - INFO - Processed chunk size:23// 9900
+2025-04-07 21:37:12,040 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:12,695 - Logger - INFO - Processed chunk size:24// 9900
+2025-04-07 21:37:12,696 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:13,384 - Logger - INFO - Processed chunk size:25// 9900
+2025-04-07 21:37:13,385 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:14,108 - Logger - INFO - Processed chunk size:26// 9900
+2025-04-07 21:37:14,109 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:14,558 - Logger - INFO - Processed chunk size:27// 2048
+2025-04-07 21:37:14,559 - Logger - INFO - Sent chunk size:2048
+2025-04-07 21:37:15,000 - Logger - INFO - Processed chunk size:28// 9444
+2025-04-07 21:37:15,000 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:37:15,388 - Logger - INFO - Processed chunk size:29// 9900
+2025-04-07 21:37:15,389 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:15,809 - Logger - INFO - Processed chunk size:30// 9900
+2025-04-07 21:37:15,810 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:16,255 - Logger - INFO - Processed chunk size:31// 9900
+2025-04-07 21:37:16,256 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:16,732 - Logger - INFO - Processed chunk size:32// 9900
+2025-04-07 21:37:16,733 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:17,237 - Logger - INFO - Processed chunk size:33// 9900
+2025-04-07 21:37:17,238 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:17,776 - Logger - INFO - Processed chunk size:34// 9900
+2025-04-07 21:37:17,777 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:18,344 - Logger - INFO - Processed chunk size:35// 9900
+2025-04-07 21:37:18,345 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:18,940 - Logger - INFO - Processed chunk size:36// 9900
+2025-04-07 21:37:18,940 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:19,567 - Logger - INFO - Processed chunk size:37// 9900
+2025-04-07 21:37:19,568 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:20,241 - Logger - INFO - Processed chunk size:38// 9900
+2025-04-07 21:37:20,242 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:20,941 - Logger - INFO - Processed chunk size:39// 9900
+2025-04-07 21:37:20,942 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:21,671 - Logger - INFO - Processed chunk size:40// 9900
+2025-04-07 21:37:21,672 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:22,288 - Logger - INFO - Processed chunk size:41// 6488
+2025-04-07 21:37:22,288 - Logger - INFO - Sent chunk size:6488
+2025-04-07 21:37:22,289 - Logger - INFO - Closed connection for stream_id: MZ568a484abb61070fb58bd9a7fe0fc47a
+2025-04-07 21:37:22,876 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 21:37:22,877 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:37:23,269 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 21:37:23,270 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:23,695 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 21:37:23,695 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:24,141 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 21:37:24,142 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:24,616 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 21:37:24,617 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:25,121 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 21:37:25,122 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:25,657 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 21:37:25,658 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:26,230 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 21:37:26,231 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:26,823 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-07 21:37:26,824 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:37:27,194 - Logger - INFO - Processed chunk size:9// 2960
+2025-04-07 21:37:27,195 - Logger - INFO - Sent chunk size:2960
+2025-04-07 21:37:27,195 - Logger - INFO - Closed connection for stream_id: MZ568a484abb61070fb58bd9a7fe0fc47a
+2025-04-07 21:38:47,060 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 21:38:47,061 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:38:47,445 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 21:38:47,446 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:38:47,859 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 21:38:47,860 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:38:48,301 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 21:38:48,302 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:38:48,513 - Logger - INFO - Processed chunk size:4// 2504
+2025-04-07 21:38:48,513 - Logger - INFO - Sent chunk size:2504
+2025-04-07 21:38:48,513 - Logger - INFO - Closed connection for stream_id: MZ87856c86b8c58f1d9eebab348f5a6679
+2025-04-07 21:38:55,176 - Logger - INFO - Stop request received for stream_id: MZ87856c86b8c58f1d9eebab348f5a6679
+2025-04-07 21:38:56,138 - Logger - INFO - Stop request received for stream_id: MZ87856c86b8c58f1d9eebab348f5a6679
+2025-04-07 21:38:59,652 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-07 21:38:59,653 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:39:00,050 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-07 21:39:00,051 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:00,476 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-07 21:39:00,477 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:00,928 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-07 21:39:00,929 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:01,418 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-07 21:39:01,419 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:01,938 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-07 21:39:01,939 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:02,478 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-07 21:39:02,479 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:03,043 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-07 21:39:03,044 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:03,638 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-07 21:39:03,639 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:04,266 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-07 21:39:04,267 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:04,924 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-07 21:39:04,925 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:05,613 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-07 21:39:05,614 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:06,331 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-07 21:39:06,332 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:07,080 - Logger - INFO - Processed chunk size:13// 10012
+2025-04-07 21:39:07,081 - Logger - INFO - Sent chunk size:10012
+2025-04-07 21:39:07,817 - Logger - INFO - Processed chunk size:14// 8876
+2025-04-07 21:39:07,817 - Logger - INFO - Sent chunk size:8876
+2025-04-07 21:39:08,241 - Logger - INFO - Processed chunk size:15// 9444
+2025-04-07 21:39:08,242 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:39:08,629 - Logger - INFO - Processed chunk size:16// 9900
+2025-04-07 21:39:08,630 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:09,047 - Logger - INFO - Processed chunk size:17// 9900
+2025-04-07 21:39:09,048 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:09,490 - Logger - INFO - Processed chunk size:18// 9900
+2025-04-07 21:39:09,491 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:09,971 - Logger - INFO - Processed chunk size:19// 9900
+2025-04-07 21:39:09,972 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:10,476 - Logger - INFO - Processed chunk size:20// 9900
+2025-04-07 21:39:10,477 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:11,010 - Logger - INFO - Processed chunk size:21// 9900
+2025-04-07 21:39:11,011 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:11,572 - Logger - INFO - Processed chunk size:22// 9900
+2025-04-07 21:39:11,573 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:12,172 - Logger - INFO - Processed chunk size:23// 9900
+2025-04-07 21:39:12,173 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:12,454 - Logger - INFO - Processed chunk size:24// 568
+2025-04-07 21:39:12,455 - Logger - INFO - Sent chunk size:568
+2025-04-07 21:39:12,879 - Logger - INFO - Processed chunk size:25// 9444
+2025-04-07 21:39:12,880 - Logger - INFO - Sent chunk size:9444
+2025-04-07 21:39:13,265 - Logger - INFO - Processed chunk size:26// 9900
+2025-04-07 21:39:13,266 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:13,680 - Logger - INFO - Processed chunk size:27// 9900
+2025-04-07 21:39:13,681 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:14,126 - Logger - INFO - Processed chunk size:28// 9900
+2025-04-07 21:39:14,127 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:14,600 - Logger - INFO - Processed chunk size:29// 9900
+2025-04-07 21:39:14,601 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:15,107 - Logger - INFO - Processed chunk size:30// 9900
+2025-04-07 21:39:15,108 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:15,642 - Logger - INFO - Processed chunk size:31// 9900
+2025-04-07 21:39:15,643 - Logger - INFO - Sent chunk size:9900
+2025-04-07 21:39:16,172 - Logger - INFO - Processed chunk size:32// 8876
+2025-04-07 21:39:16,173 - Logger - INFO - Sent chunk size:8876
+2025-04-07 21:39:16,173 - Logger - INFO - Closed connection for stream_id: MZ87856c86b8c58f1d9eebab348f5a6679
+2025-04-10 07:54:40,336 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 07:54:40,752 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 07:54:41,182 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 07:54:41,660 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 07:54:41,779 - Logger - INFO - Processed chunk size:4// 456
+2025-04-10 07:55:07,100 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 07:55:07,496 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 07:55:07,941 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 07:55:08,396 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 07:55:08,883 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 07:55:09,186 - Logger - INFO - Processed chunk size:5// 3984
+2025-04-10 08:00:19,721 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 08:00:20,115 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 08:00:20,537 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 08:00:20,982 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 08:00:21,215 - Logger - INFO - Processed chunk size:4// 2960
+2025-04-10 08:07:02,174 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 08:07:02,564 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 08:07:02,981 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 08:07:03,436 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 08:07:03,719 - Logger - INFO - Processed chunk size:4// 4440
+2025-04-10 08:13:25,057 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 08:13:25,461 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 08:13:25,895 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 08:13:26,354 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 08:13:26,842 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 08:13:27,354 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-10 08:13:27,900 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-10 08:13:28,465 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-10 08:13:29,063 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-10 08:13:29,695 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-10 08:13:30,366 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-10 08:13:30,797 - Logger - INFO - Processed chunk size:11// 2960
+2025-04-10 08:13:51,495 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 08:13:51,894 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 08:13:52,319 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 08:13:52,763 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 08:13:53,243 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 08:13:53,746 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-10 08:13:54,283 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-10 08:13:54,842 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-10 08:13:55,221 - Logger - INFO - Processed chunk size:8// 3984
+2025-04-10 12:33:00,093 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 12:33:00,489 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 12:33:00,911 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 12:33:01,363 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 12:33:01,522 - Logger - INFO - Processed chunk size:4// 1024
+2025-04-10 12:35:01,696 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 12:35:02,085 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 12:35:02,509 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 12:35:02,963 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 12:35:03,436 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 12:35:03,762 - Logger - INFO - Processed chunk size:5// 4892
+2025-04-10 12:38:57,117 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 12:38:57,502 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 12:38:57,917 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 12:38:58,357 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 12:38:58,476 - Logger - INFO - Processed chunk size:4// 456
+2025-04-10 12:42:49,855 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 12:42:50,251 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 12:42:50,667 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 12:42:51,115 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 12:42:51,326 - Logger - INFO - Processed chunk size:4// 2504
+2025-04-10 13:35:06,960 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 13:35:07,350 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 13:35:07,768 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 13:35:08,211 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 13:35:08,696 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 13:35:08,973 - Logger - INFO - Processed chunk size:5// 3416
+2025-04-10 13:55:05,717 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 13:55:06,115 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 13:55:06,530 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 13:55:06,979 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 13:55:07,453 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 13:55:07,851 - Logger - INFO - Processed chunk size:5// 6940
+2025-04-10 14:23:00,083 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 14:23:00,473 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 14:23:00,895 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 14:23:01,343 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 14:23:01,820 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 14:23:02,114 - Logger - INFO - Processed chunk size:5// 3984
+2025-04-10 14:26:45,440 - Logger - INFO - Processed chunk size:0// 14336
+2025-04-10 14:26:46,025 - Logger - INFO - Processed chunk size:1// 14904
+2025-04-10 14:26:46,653 - Logger - INFO - Processed chunk size:2// 14792
+2025-04-10 14:26:47,325 - Logger - INFO - Processed chunk size:3// 14904
+2025-04-10 14:26:48,047 - Logger - INFO - Processed chunk size:4// 14904
+2025-04-10 14:26:48,819 - Logger - INFO - Processed chunk size:5// 14792
+2025-04-10 14:26:49,625 - Logger - INFO - Processed chunk size:6// 14904
+2025-04-10 14:26:50,481 - Logger - INFO - Processed chunk size:7// 14792
+2025-04-10 14:26:51,389 - Logger - INFO - Processed chunk size:8// 14904
+2025-04-10 14:26:52,166 - Logger - INFO - Processed chunk size:9// 10356
+2025-04-10 14:30:43,336 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 14:30:43,736 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 14:30:44,158 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 14:30:44,607 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 14:30:44,979 - Logger - INFO - Processed chunk size:4// 5205
+2025-04-10 14:31:00,693 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 14:31:01,091 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 14:31:01,522 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 14:31:01,982 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 14:31:02,471 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 14:31:02,983 - Logger - INFO - Processed chunk size:5// 7424
+2025-04-10 14:31:03,529 - Logger - INFO - Processed chunk size:6// 7424
+2025-04-10 14:31:04,100 - Logger - INFO - Processed chunk size:7// 7424
+2025-04-10 14:31:04,701 - Logger - INFO - Processed chunk size:8// 7424
+2025-04-10 14:31:05,339 - Logger - INFO - Processed chunk size:9// 7424
+2025-04-10 14:31:06,007 - Logger - INFO - Processed chunk size:10// 7424
+2025-04-10 14:31:06,701 - Logger - INFO - Processed chunk size:11// 7424
+2025-04-10 14:31:07,425 - Logger - INFO - Processed chunk size:12// 7424
+2025-04-10 14:31:08,175 - Logger - INFO - Processed chunk size:13// 7509
+2025-04-10 14:31:08,964 - Logger - INFO - Processed chunk size:14// 7424
+2025-04-10 14:31:09,775 - Logger - INFO - Processed chunk size:15// 7424
+2025-04-10 14:31:10,622 - Logger - INFO - Processed chunk size:16// 7424
+2025-04-10 14:31:11,486 - Logger - INFO - Processed chunk size:17// 7424
+2025-04-10 14:31:12,382 - Logger - INFO - Processed chunk size:18// 7424
+2025-04-10 14:31:13,315 - Logger - INFO - Processed chunk size:19// 7424
+2025-04-10 14:31:13,940 - Logger - INFO - Processed chunk size:20// 1109
+2025-04-10 14:31:14,411 - Logger - INFO - Processed chunk size:21// 7082
+2025-04-10 14:31:14,819 - Logger - INFO - Processed chunk size:22// 7424
+2025-04-10 14:31:15,246 - Logger - INFO - Processed chunk size:23// 7424
+2025-04-10 14:31:15,709 - Logger - INFO - Processed chunk size:24// 7424
+2025-04-10 14:31:16,206 - Logger - INFO - Processed chunk size:25// 7424
+2025-04-10 14:31:16,734 - Logger - INFO - Processed chunk size:26// 7424
+2025-04-10 14:31:17,283 - Logger - INFO - Processed chunk size:27// 7424
+2025-04-10 14:31:17,867 - Logger - INFO - Processed chunk size:28// 7424
+2025-04-10 14:31:18,470 - Logger - INFO - Processed chunk size:29// 7424
+2025-04-10 14:31:19,107 - Logger - INFO - Processed chunk size:30// 7424
+2025-04-10 14:31:19,779 - Logger - INFO - Processed chunk size:31// 7424
+2025-04-10 14:31:20,479 - Logger - INFO - Processed chunk size:32// 7424
+2025-04-10 14:31:21,211 - Logger - INFO - Processed chunk size:33// 7424
+2025-04-10 14:31:21,971 - Logger - INFO - Processed chunk size:34// 7509
+2025-04-10 14:31:22,776 - Logger - INFO - Processed chunk size:35// 7424
+2025-04-10 14:31:23,571 - Logger - INFO - Processed chunk size:36// 6997
+2025-04-10 14:33:47,474 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 14:33:47,887 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 14:33:48,315 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 14:33:48,772 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 14:33:49,263 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 14:33:49,781 - Logger - INFO - Processed chunk size:5// 7424
+2025-04-10 14:33:50,346 - Logger - INFO - Processed chunk size:6// 7424
+2025-04-10 14:33:50,930 - Logger - INFO - Processed chunk size:7// 7424
+2025-04-10 14:33:51,530 - Logger - INFO - Processed chunk size:8// 7424
+2025-04-10 14:33:52,164 - Logger - INFO - Processed chunk size:9// 7424
+2025-04-10 14:33:52,824 - Logger - INFO - Processed chunk size:10// 7424
+2025-04-10 14:33:53,524 - Logger - INFO - Processed chunk size:11// 7424
+2025-04-10 14:33:54,245 - Logger - INFO - Processed chunk size:12// 7424
+2025-04-10 14:33:54,717 - Logger - INFO - Processed chunk size:13// 1877
+2025-04-10 14:33:55,194 - Logger - INFO - Processed chunk size:14// 7082
+2025-04-10 14:33:55,616 - Logger - INFO - Processed chunk size:15// 7424
+2025-04-10 14:33:56,066 - Logger - INFO - Processed chunk size:16// 7424
+2025-04-10 14:33:56,544 - Logger - INFO - Processed chunk size:17// 7424
+2025-04-10 14:33:57,050 - Logger - INFO - Processed chunk size:18// 7424
+2025-04-10 14:33:57,597 - Logger - INFO - Processed chunk size:19// 7424
+2025-04-10 14:33:58,167 - Logger - INFO - Processed chunk size:20// 7424
+2025-04-10 14:33:58,762 - Logger - INFO - Processed chunk size:21// 7424
+2025-04-10 14:33:59,391 - Logger - INFO - Processed chunk size:22// 7424
+2025-04-10 14:34:00,044 - Logger - INFO - Processed chunk size:23// 7424
+2025-04-10 14:34:00,737 - Logger - INFO - Processed chunk size:24// 7424
+2025-04-10 14:34:01,468 - Logger - INFO - Processed chunk size:25// 7424
+2025-04-10 14:34:02,220 - Logger - INFO - Processed chunk size:26// 7424
+2025-04-10 14:34:02,994 - Logger - INFO - Processed chunk size:27// 7509
+2025-04-10 14:34:03,791 - Logger - INFO - Processed chunk size:28// 7424
+2025-04-10 14:34:04,631 - Logger - INFO - Processed chunk size:29// 7424
+2025-04-10 14:34:05,497 - Logger - INFO - Processed chunk size:30// 7424
+2025-04-10 14:44:34,955 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 14:44:35,348 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 14:44:35,762 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 14:44:36,203 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 14:44:36,688 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 14:44:37,048 - Logger - INFO - Processed chunk size:5// 4437
+2025-04-10 15:04:12,752 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 15:04:13,155 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 15:04:13,585 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 15:04:14,040 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 15:04:14,524 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 15:04:15,040 - Logger - INFO - Processed chunk size:5// 7424
+2025-04-10 15:04:15,582 - Logger - INFO - Processed chunk size:6// 7424
+2025-04-10 15:04:16,162 - Logger - INFO - Processed chunk size:7// 7424
+2025-04-10 15:04:16,769 - Logger - INFO - Processed chunk size:8// 7424
+2025-04-10 15:04:17,403 - Logger - INFO - Processed chunk size:9// 7424
+2025-04-10 15:04:18,065 - Logger - INFO - Processed chunk size:10// 7424
+2025-04-10 15:04:18,757 - Logger - INFO - Processed chunk size:11// 7424
+2025-04-10 15:04:19,485 - Logger - INFO - Processed chunk size:12// 7424
+2025-04-10 15:04:20,233 - Logger - INFO - Processed chunk size:13// 7509
+2025-04-10 15:04:21,020 - Logger - INFO - Processed chunk size:14// 7424
+2025-04-10 15:04:21,835 - Logger - INFO - Processed chunk size:15// 7424
+2025-04-10 15:04:22,349 - Logger - INFO - Processed chunk size:16// 1109
+2025-04-10 15:04:49,373 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 15:04:49,775 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 15:04:50,202 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 15:04:50,656 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 15:04:51,144 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 15:04:51,654 - Logger - INFO - Processed chunk size:5// 7424
+2025-04-10 15:04:52,208 - Logger - INFO - Processed chunk size:6// 7424
+2025-04-10 15:04:52,777 - Logger - INFO - Processed chunk size:7// 7424
+2025-04-10 15:04:53,379 - Logger - INFO - Processed chunk size:8// 7424
+2025-04-10 15:04:54,012 - Logger - INFO - Processed chunk size:9// 7424
+2025-04-10 15:04:54,680 - Logger - INFO - Processed chunk size:10// 7424
+2025-04-10 15:04:55,374 - Logger - INFO - Processed chunk size:11// 7424
+2025-04-10 15:04:56,096 - Logger - INFO - Processed chunk size:12// 7424
+2025-04-10 15:04:56,844 - Logger - INFO - Processed chunk size:13// 7509
+2025-04-10 15:04:57,263 - Logger - INFO - Processed chunk size:14// 341
+2025-04-10 15:04:57,734 - Logger - INFO - Processed chunk size:15// 7082
+2025-04-10 15:04:58,152 - Logger - INFO - Processed chunk size:16// 7424
+2025-04-10 15:04:58,596 - Logger - INFO - Processed chunk size:17// 7424
+2025-04-10 15:04:59,063 - Logger - INFO - Processed chunk size:18// 7424
+2025-04-10 15:04:59,568 - Logger - INFO - Processed chunk size:19// 7424
+2025-04-10 15:10:52,312 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 15:10:52,710 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 15:10:53,144 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 15:10:53,598 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 15:10:54,026 - Logger - INFO - Processed chunk size:4// 6314
+2025-04-10 15:11:12,218 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 15:11:12,621 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 15:11:13,066 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 15:11:13,538 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 15:11:14,030 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 15:11:14,550 - Logger - INFO - Processed chunk size:5// 7424
+2025-04-10 15:11:15,106 - Logger - INFO - Processed chunk size:6// 7424
+2025-04-10 15:11:15,680 - Logger - INFO - Processed chunk size:7// 7424
+2025-04-10 15:11:16,303 - Logger - INFO - Processed chunk size:8// 7424
+2025-04-10 15:11:16,944 - Logger - INFO - Processed chunk size:9// 7424
+2025-04-10 15:11:17,553 - Logger - INFO - Processed chunk size:10// 6314
+2025-04-10 15:11:18,049 - Logger - INFO - Processed chunk size:11// 7082
+2025-04-10 15:11:18,453 - Logger - INFO - Processed chunk size:12// 7424
+2025-04-10 15:11:18,875 - Logger - INFO - Processed chunk size:13// 7424
+2025-04-10 15:11:19,327 - Logger - INFO - Processed chunk size:14// 7424
+2025-04-10 15:11:19,811 - Logger - INFO - Processed chunk size:15// 7424
+2025-04-10 15:11:20,329 - Logger - INFO - Processed chunk size:16// 7424
+2025-04-10 15:11:20,886 - Logger - INFO - Processed chunk size:17// 7424
+2025-04-10 15:11:21,471 - Logger - INFO - Processed chunk size:18// 7424
+2025-04-10 15:11:22,089 - Logger - INFO - Processed chunk size:19// 7424
+2025-04-10 15:11:22,731 - Logger - INFO - Processed chunk size:20// 7424
+2025-04-10 15:11:23,404 - Logger - INFO - Processed chunk size:21// 7424
+2025-04-10 15:11:24,099 - Logger - INFO - Processed chunk size:22// 7424
+2025-04-10 15:11:24,823 - Logger - INFO - Processed chunk size:23// 7424
+2025-04-10 15:11:25,576 - Logger - INFO - Processed chunk size:24// 7509
+2025-04-10 15:11:26,360 - Logger - INFO - Processed chunk size:25// 7424
+2025-04-10 15:11:27,003 - Logger - INFO - Processed chunk size:26// 4096
+2025-04-10 15:11:48,704 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 15:11:49,130 - Logger - INFO - Processed chunk size:1// 7424
+2025-04-10 15:11:49,583 - Logger - INFO - Processed chunk size:2// 7424
+2025-04-10 15:11:50,057 - Logger - INFO - Processed chunk size:3// 7424
+2025-04-10 15:11:50,559 - Logger - INFO - Processed chunk size:4// 7424
+2025-04-10 15:11:51,089 - Logger - INFO - Processed chunk size:5// 7424
+2025-04-10 15:11:51,643 - Logger - INFO - Processed chunk size:6// 7424
+2025-04-10 15:11:52,219 - Logger - INFO - Processed chunk size:7// 7424
+2025-04-10 15:11:52,837 - Logger - INFO - Processed chunk size:8// 7424
+2025-04-10 15:11:53,475 - Logger - INFO - Processed chunk size:9// 7424
+2025-04-10 15:11:54,147 - Logger - INFO - Processed chunk size:10// 7424
+2025-04-10 15:11:54,852 - Logger - INFO - Processed chunk size:11// 7424
+2025-04-10 15:11:55,590 - Logger - INFO - Processed chunk size:12// 7424
+2025-04-10 15:11:56,349 - Logger - INFO - Processed chunk size:13// 7509
+2025-04-10 15:11:57,151 - Logger - INFO - Processed chunk size:14// 7424
+2025-04-10 15:11:57,983 - Logger - INFO - Processed chunk size:15// 7424
+2025-04-10 15:11:58,694 - Logger - INFO - Processed chunk size:16// 4778
+2025-04-10 15:11:59,155 - Logger - INFO - Processed chunk size:17// 7082
+2025-04-10 15:11:59,570 - Logger - INFO - Processed chunk size:18// 7424
+2025-04-10 15:11:59,991 - Logger - INFO - Processed chunk size:19// 7424
+2025-04-10 15:12:00,447 - Logger - INFO - Processed chunk size:20// 7424
+2025-04-10 15:12:00,938 - Logger - INFO - Processed chunk size:21// 7424
+2025-04-10 15:12:01,445 - Logger - INFO - Processed chunk size:22// 7424
+2025-04-10 15:12:01,992 - Logger - INFO - Processed chunk size:23// 7424
+2025-04-10 15:12:02,578 - Logger - INFO - Processed chunk size:24// 7424
+2025-04-10 15:12:03,203 - Logger - INFO - Processed chunk size:25// 7424
+2025-04-10 15:12:03,833 - Logger - INFO - Processed chunk size:26// 7424
+2025-04-10 15:12:04,491 - Logger - INFO - Processed chunk size:27// 7424
+2025-04-10 15:12:04,936 - Logger - INFO - Processed chunk size:28// 2218
+2025-04-10 16:02:45,986 - Logger - INFO - WebSocket connection established
+2025-04-10 16:05:09,910 - Logger - INFO - WebSocket connection established
+2025-04-10 16:05:09,975 - Logger - INFO - WebSocket connection ID: MZ4e06de1aec175d6b4aacd1125c4e3362, <starlette.websockets.WebSocket object at 0x71e5a2878a00>, {'text': "Hello! How can I assist you today with your student's medical needs?", 'stream_id': 'MZ4e06de1aec175d6b4aacd1125c4e3362'}
+2025-04-10 16:05:09,996 - Logger - INFO - Error: 1 validation error for StreamingInputs
+stream_id
+  field required (type=value_error.missing)
+2025-04-10 17:47:02,468 - Logger - INFO - WebSocket connection established
+2025-04-10 17:47:02,518 - Logger - INFO - TIMING: WebSocket data receive took 0.0497 seconds
+2025-04-10 17:47:02,518 - Logger - INFO - WebSocket connection ID: MZ0bda339cd63df7c6c179b05983b50bd8, <starlette.websockets.WebSocket object at 0x7940f01bc970>, {'text': "Hi there! How can I assist you today regarding your student's medical needs?", 'stream_id': 'MZ0bda339cd63df7c6c179b05983b50bd8'}
+2025-04-10 17:47:02,544 - Logger - INFO - Starting TTS generation for text: 'Hi there! How can I assist you today regarding your student's medical needs?' (length: 76)
+2025-04-10 17:47:03,763 - Logger - INFO - TIMING: Postprocessing chunk 0 took 0.0039 seconds
+2025-04-10 17:47:03,775 - Logger - INFO - TIMING: Encoding chunk 0 took 0.0117 seconds
+2025-04-10 17:47:03,775 - Logger - INFO - Processed chunk size:0// 7082
+2025-04-10 17:47:03,776 - Logger - INFO - Error: Object of type bytes is not JSON serializable
+2025-04-10 17:47:03,776 - Logger - INFO - TIMING: WebSocket connection lifetime took 1.3080 seconds
+2025-04-10 17:49:38,384 - Logger - INFO - WebSocket connection established
+2025-04-10 17:49:38,458 - Logger - INFO - TIMING: WebSocket data receive took 0.0623 seconds
+2025-04-10 17:49:38,458 - Logger - INFO - WebSocket connection ID: MZ0d30a9d5861a61b72894bb0e2b41588a, <starlette.websockets.WebSocket object at 0x701bba680850>, {'text': "Hello! How can I assist you today with your student's medical needs?", 'stream_id': 'MZ0d30a9d5861a61b72894bb0e2b41588a'}
+2025-04-10 17:49:38,482 - Logger - INFO - Starting TTS generation for text: 'Hello! How can I assist you today with your student's medical needs?' (length: 68)
+2025-04-10 17:49:39,143 - Logger - INFO - TIMING: Postprocessing chunk 0 took 0.0055 seconds
+2025-04-10 17:49:39,144 - Logger - INFO - TIMING: Encoding chunk 0 took 0.0008 seconds
+2025-04-10 17:49:39,144 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 17:49:39,144 - Logger - INFO - Error: string indices must be integers
+2025-04-10 17:49:39,145 - Logger - INFO - TIMING: WebSocket connection lifetime took 0.7611 seconds
+2025-04-10 17:51:53,665 - Logger - INFO - WebSocket connection established
+2025-04-10 17:51:53,721 - Logger - INFO - TIMING: WebSocket data receive took 0.0562 seconds
+2025-04-10 17:51:53,721 - Logger - INFO - WebSocket connection ID: MZd4d56536188cdff828ee0716126ec1b5, <starlette.websockets.WebSocket object at 0x75b7883899c0>, {'text': "Hello! How can I assist you today? Are you calling about a student's medical situation?", 'stream_id': 'MZd4d56536188cdff828ee0716126ec1b5'}
+2025-04-10 17:51:53,751 - Logger - INFO - Starting TTS generation for text: 'Hello! How can I assist you today? Are you calling about a student's medical situation?' (length: 87)
+2025-04-10 17:51:54,393 - Logger - INFO - TIMING: Postprocessing chunk 0 took 0.0029 seconds
+2025-04-10 17:51:54,394 - Logger - INFO - TIMING: Encoding chunk 0 took 0.0009 seconds
+2025-04-10 17:51:54,394 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 17:51:54,394 - Logger - INFO - Error: string indices must be integers
+2025-04-10 17:51:54,395 - Logger - ERROR - Traceback:
+Traceback (most recent call last):
+  File "/app/main.py", line 259, in predict_streaming_endpoint
+    await connections[data_json["stream_id"]].send(json.dumps({"chunk": chunk}))
+  File "/opt/conda/lib/python3.10/site-packages/starlette/websockets.py", line 77, in send
+    message_type = message["type"]
+TypeError: string indices must be integers
+
+2025-04-10 17:51:54,396 - Logger - INFO - TIMING: WebSocket connection lifetime took 0.7312 seconds
+2025-04-10 17:57:52,800 - Logger - INFO - WebSocket connection established
+2025-04-10 17:57:52,855 - Logger - INFO - TIMING: WebSocket data receive took 0.0554 seconds
+2025-04-10 17:57:52,856 - Logger - INFO - WebSocket connection ID: MZad2787f608fe3068fe60d23bb1a9ec92, <starlette.websockets.WebSocket object at 0x7395e35a09a0>, {'text': "Hello! How can I assist you today with your student's medical needs?", 'stream_id': 'MZad2787f608fe3068fe60d23bb1a9ec92'}
+2025-04-10 17:57:52,883 - Logger - INFO - Starting TTS generation for text: 'Hello! How can I assist you today with your student's medical needs?' (length: 68)
+2025-04-10 17:57:53,537 - Logger - INFO - TIMING: Postprocessing chunk 0 took 0.0046 seconds
+2025-04-10 17:57:53,538 - Logger - INFO - TIMING: Encoding chunk 0 took 0.0008 seconds
+2025-04-10 17:57:53,538 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 17:57:53,538 - Logger - INFO - Sent chunk 1, size: 9444
+2025-04-10 17:57:53,538 - Logger - INFO - TIMING: Sending chunk 1 took 0.0002 seconds
+2025-04-10 17:57:53,936 - Logger - INFO - TIMING: Postprocessing chunk 1 took 0.0002 seconds
+2025-04-10 17:57:53,936 - Logger - INFO - TIMING: Encoding chunk 1 took 0.0004 seconds
+2025-04-10 17:57:53,936 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 17:57:53,936 - Logger - INFO - Sent chunk 2, size: 9900
+2025-04-10 17:57:53,936 - Logger - INFO - TIMING: Sending chunk 2 took 0.0002 seconds
+2025-04-10 17:57:54,350 - Logger - INFO - TIMING: Postprocessing chunk 2 took 0.0002 seconds
+2025-04-10 17:57:54,350 - Logger - INFO - TIMING: Encoding chunk 2 took 0.0004 seconds
+2025-04-10 17:57:54,350 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 17:57:54,351 - Logger - INFO - Sent chunk 3, size: 9900
+2025-04-10 17:57:54,351 - Logger - INFO - TIMING: Sending chunk 3 took 0.0002 seconds
+2025-04-10 17:57:54,797 - Logger - INFO - TIMING: Postprocessing chunk 3 took 0.0002 seconds
+2025-04-10 17:57:54,797 - Logger - INFO - TIMING: Encoding chunk 3 took 0.0004 seconds
+2025-04-10 17:57:54,797 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 17:57:54,798 - Logger - INFO - Sent chunk 4, size: 9900
+2025-04-10 17:57:54,798 - Logger - INFO - TIMING: Sending chunk 4 took 0.0002 seconds
+2025-04-10 17:57:55,024 - Logger - INFO - TIMING: Postprocessing chunk 4 took 0.0002 seconds
+2025-04-10 17:57:55,024 - Logger - INFO - TIMING: Encoding chunk 4 took 0.0003 seconds
+2025-04-10 17:57:55,024 - Logger - INFO - Processed chunk size:4// 2960
+2025-04-10 17:57:55,024 - Logger - INFO - Sent chunk 5, size: 2960
+2025-04-10 17:57:55,024 - Logger - INFO - TIMING: Sending chunk 5 took 0.0001 seconds
+2025-04-10 17:57:55,024 - Logger - INFO - PERFORMANCE SUMMARY:
+2025-04-10 17:57:55,024 - Logger - INFO - - Total chunks processed: 5
+2025-04-10 17:57:55,024 - Logger - INFO - - Average postprocessing time: 0.0011s per chunk
+2025-04-10 17:57:55,025 - Logger - INFO - - Average encoding time: 0.0004s per chunk
+2025-04-10 17:57:55,025 - Logger - INFO - - Total postprocessing time: 0.0053s
+2025-04-10 17:57:55,025 - Logger - INFO - - Total encoding time: 0.0022s
+2025-04-10 17:57:55,025 - Logger - INFO - - Estimated inference time: -0.0066s (-715.09%)
+2025-04-10 17:57:55,025 - Logger - INFO - TIMING: TTS Generation (total) took 2.1509 seconds
+2025-04-10 17:57:55,025 - Logger - INFO - TIMING: Full TTS processing and sending took 2.1510 seconds
+2025-04-10 17:57:55,025 - Logger - INFO - Avg send time: 0.0001s per chunk
+2025-04-10 17:57:55,025 - Logger - INFO - Sending completion message
+2025-04-10 17:57:55,025 - Logger - INFO - TIMING: WebSocket connection lifetime took 2.2253 seconds
+2025-04-10 17:58:38,890 - Logger - INFO - WebSocket connection established
+2025-04-10 17:58:38,959 - Logger - INFO - TIMING: WebSocket data receive took 0.0688 seconds
+2025-04-10 17:58:38,959 - Logger - INFO - WebSocket connection ID: MZdf69aaeac95a344e88e3dfb9634ae1b0, <starlette.websockets.WebSocket object at 0x7395e3592aa0>, {'text': "Hello! How can I assist you today with your student's medical needs? If you have any specific questions or need guidance on a health situation, feel free to let me know.", 'stream_id': 'MZdf69aaeac95a344e88e3dfb9634ae1b0'}
+2025-04-10 17:58:38,983 - Logger - INFO - Starting TTS generation for text: 'Hello! How can I assist you today with your student's medical needs? If you have any specific questions or need guidance on a health situation, feel free to let me know.' (length: 169)
+2025-04-10 17:58:39,461 - Logger - INFO - TIMING: Postprocessing chunk 0 took 0.0263 seconds
+2025-04-10 17:58:39,461 - Logger - INFO - TIMING: Encoding chunk 0 took 0.0005 seconds
+2025-04-10 17:58:39,461 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 17:58:39,462 - Logger - INFO - Sent chunk 1, size: 9444
+2025-04-10 17:58:39,462 - Logger - INFO - TIMING: Sending chunk 1 took 0.0001 seconds
+2025-04-10 17:58:39,856 - Logger - INFO - TIMING: Postprocessing chunk 1 took 0.0002 seconds
+2025-04-10 17:58:39,856 - Logger - INFO - TIMING: Encoding chunk 1 took 0.0004 seconds
+2025-04-10 17:58:39,857 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 17:58:39,857 - Logger - INFO - Sent chunk 2, size: 9900
+2025-04-10 17:58:39,857 - Logger - INFO - TIMING: Sending chunk 2 took 0.0002 seconds
+2025-04-10 17:58:40,278 - Logger - INFO - TIMING: Postprocessing chunk 2 took 0.0002 seconds
+2025-04-10 17:58:40,278 - Logger - INFO - TIMING: Encoding chunk 2 took 0.0004 seconds
+2025-04-10 17:58:40,278 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 17:58:40,279 - Logger - INFO - Sent chunk 3, size: 9900
+2025-04-10 17:58:40,279 - Logger - INFO - TIMING: Sending chunk 3 took 0.0002 seconds
+2025-04-10 17:58:40,732 - Logger - INFO - TIMING: Postprocessing chunk 3 took 0.0002 seconds
+2025-04-10 17:58:40,732 - Logger - INFO - TIMING: Encoding chunk 3 took 0.0004 seconds
+2025-04-10 17:58:40,732 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 17:58:40,732 - Logger - INFO - Sent chunk 4, size: 9900
+2025-04-10 17:58:40,732 - Logger - INFO - TIMING: Sending chunk 4 took 0.0002 seconds
+2025-04-10 17:58:41,217 - Logger - INFO - TIMING: Postprocessing chunk 4 took 0.0002 seconds
+2025-04-10 17:58:41,218 - Logger - INFO - TIMING: Encoding chunk 4 took 0.0004 seconds
+2025-04-10 17:58:41,218 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 17:58:41,218 - Logger - INFO - Sent chunk 5, size: 9900
+2025-04-10 17:58:41,218 - Logger - INFO - TIMING: Sending chunk 5 took 0.0002 seconds
+2025-04-10 17:58:41,739 - Logger - INFO - TIMING: Postprocessing chunk 5 took 0.0002 seconds
+2025-04-10 17:58:41,740 - Logger - INFO - TIMING: Encoding chunk 5 took 0.0004 seconds
+2025-04-10 17:58:41,740 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-10 17:58:41,740 - Logger - INFO - Sent chunk 6, size: 9900
+2025-04-10 17:58:41,740 - Logger - INFO - TIMING: Sending chunk 6 took 0.0002 seconds
+2025-04-10 17:58:42,280 - Logger - INFO - TIMING: Postprocessing chunk 6 took 0.0002 seconds
+2025-04-10 17:58:42,281 - Logger - INFO - TIMING: Encoding chunk 6 took 0.0004 seconds
+2025-04-10 17:58:42,281 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-10 17:58:42,281 - Logger - INFO - Sent chunk 7, size: 9900
+2025-04-10 17:58:42,281 - Logger - INFO - TIMING: Sending chunk 7 took 0.0003 seconds
+2025-04-10 17:58:42,878 - Logger - INFO - TIMING: Postprocessing chunk 7 took 0.0002 seconds
+2025-04-10 17:58:42,879 - Logger - INFO - TIMING: Encoding chunk 7 took 0.0004 seconds
+2025-04-10 17:58:42,879 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-10 17:58:42,879 - Logger - INFO - Sent chunk 8, size: 9900
+2025-04-10 17:58:42,879 - Logger - INFO - TIMING: Sending chunk 8 took 0.0002 seconds
+2025-04-10 17:58:43,477 - Logger - INFO - TIMING: Postprocessing chunk 8 took 0.0002 seconds
+2025-04-10 17:58:43,478 - Logger - INFO - TIMING: Encoding chunk 8 took 0.0005 seconds
+2025-04-10 17:58:43,478 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-10 17:58:43,478 - Logger - INFO - Sent chunk 9, size: 9900
+2025-04-10 17:58:43,478 - Logger - INFO - TIMING: Sending chunk 9 took 0.0002 seconds
+2025-04-10 17:58:44,110 - Logger - INFO - TIMING: Postprocessing chunk 9 took 0.0002 seconds
+2025-04-10 17:58:44,111 - Logger - INFO - TIMING: Encoding chunk 9 took 0.0004 seconds
+2025-04-10 17:58:44,111 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-10 17:58:44,111 - Logger - INFO - Sent chunk 10, size: 9900
+2025-04-10 17:58:44,111 - Logger - INFO - TIMING: Sending chunk 10 took 0.0002 seconds
+2025-04-10 17:58:44,774 - Logger - INFO - TIMING: Postprocessing chunk 10 took 0.0002 seconds
+2025-04-10 17:58:44,775 - Logger - INFO - TIMING: Encoding chunk 10 took 0.0004 seconds
+2025-04-10 17:58:44,775 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-10 17:58:44,775 - Logger - INFO - Sent chunk 11, size: 9900
+2025-04-10 17:58:44,775 - Logger - INFO - TIMING: Sending chunk 11 took 0.0002 seconds
+2025-04-10 17:58:45,467 - Logger - INFO - TIMING: Postprocessing chunk 11 took 0.0002 seconds
+2025-04-10 17:58:45,468 - Logger - INFO - TIMING: Encoding chunk 11 took 0.0004 seconds
+2025-04-10 17:58:45,468 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-10 17:58:45,468 - Logger - INFO - Sent chunk 12, size: 9900
+2025-04-10 17:58:45,468 - Logger - INFO - TIMING: Sending chunk 12 took 0.0002 seconds
+2025-04-10 17:58:46,184 - Logger - INFO - TIMING: Postprocessing chunk 12 took 0.0002 seconds
+2025-04-10 17:58:46,185 - Logger - INFO - TIMING: Encoding chunk 12 took 0.0004 seconds
+2025-04-10 17:58:46,185 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-10 17:58:46,185 - Logger - INFO - Sent chunk 13, size: 9900
+2025-04-10 17:58:46,185 - Logger - INFO - TIMING: Sending chunk 13 took 0.0001 seconds
+2025-04-10 17:58:46,576 - Logger - INFO - TIMING: Postprocessing chunk 13 took 0.0002 seconds
+2025-04-10 17:58:46,576 - Logger - INFO - TIMING: Encoding chunk 13 took 0.0002 seconds
+2025-04-10 17:58:46,576 - Logger - INFO - Processed chunk size:13// 568
+2025-04-10 17:58:46,576 - Logger - INFO - Sent chunk 14, size: 568
+2025-04-10 17:58:46,576 - Logger - INFO - TIMING: Sending chunk 14 took 0.0001 seconds
+2025-04-10 17:58:46,577 - Logger - INFO - PERFORMANCE SUMMARY:
+2025-04-10 17:58:46,577 - Logger - INFO - - Total chunks processed: 14
+2025-04-10 17:58:46,577 - Logger - INFO - - Average postprocessing time: 0.0021s per chunk
+2025-04-10 17:58:46,577 - Logger - INFO - - Average encoding time: 0.0004s per chunk
+2025-04-10 17:58:46,577 - Logger - INFO - - Total postprocessing time: 0.0288s
+2025-04-10 17:58:46,577 - Logger - INFO - - Total encoding time: 0.0056s
+2025-04-10 17:58:46,577 - Logger - INFO - - Estimated inference time: -0.0334s (-3088.74%)
+2025-04-10 17:58:46,577 - Logger - INFO - TIMING: TTS Generation (total) took 7.6029 seconds
+2025-04-10 17:58:46,577 - Logger - INFO - TIMING: Full TTS processing and sending took 7.6029 seconds
+2025-04-10 17:58:46,577 - Logger - INFO - Avg send time: 0.0001s per chunk
+2025-04-10 17:58:46,577 - Logger - INFO - Sending completion message
+2025-04-10 17:58:46,577 - Logger - INFO - TIMING: WebSocket connection lifetime took 7.6873 seconds
+2025-04-10 17:59:25,391 - Logger - INFO - WebSocket connection established
+2025-04-10 17:59:25,448 - Logger - INFO - TIMING: WebSocket data receive took 0.0571 seconds
+2025-04-10 17:59:25,448 - Logger - INFO - WebSocket connection ID: MZdf69aaeac95a344e88e3dfb9634ae1b0, <starlette.websockets.WebSocket object at 0x7395e3591240>, {'text': "Certainly! I can assist with the following:\n\n1. Summarize medical history for specific students, including conditions, allergies, and medications.\n2. Offer immediate first aid advice for common health incidents.\n3. Provide guidance on treatment or next steps in medical situations.\n4. Answer questions about a student's health records.\n5. Give clear instructions you can follow when helping a student.\n\nIf you have a particular concern or need information about a student, just let me know!", 'stream_id': 'MZdf69aaeac95a344e88e3dfb9634ae1b0'}
+2025-04-10 17:59:25,475 - Logger - INFO - Starting TTS generation for text: 'Certainly! I can assist with the following:
+
+1. Summarize medical history for specific students, including conditions, allergies, and medications.
+2. Offer immediate first aid advice for common health incidents.
+3. Provide guidance on treatment or next steps in medical situations.
+4. Answer questions about a student's health records.
+5. Give clear instructions you can follow when helping a student.
+
+If you have a particular concern or need information about a student, just let me know!' (length: 490)
+2025-04-10 17:59:26,117 - Logger - INFO - TIMING: Postprocessing chunk 0 took 0.0252 seconds
+2025-04-10 17:59:26,118 - Logger - INFO - TIMING: Encoding chunk 0 took 0.0006 seconds
+2025-04-10 17:59:26,118 - Logger - INFO - Processed chunk size:0// 9444
+2025-04-10 17:59:26,118 - Logger - INFO - Sent chunk 1, size: 9444
+2025-04-10 17:59:26,118 - Logger - INFO - TIMING: Sending chunk 1 took 0.0002 seconds
+2025-04-10 17:59:26,516 - Logger - INFO - TIMING: Postprocessing chunk 1 took 0.0002 seconds
+2025-04-10 17:59:26,517 - Logger - INFO - TIMING: Encoding chunk 1 took 0.0004 seconds
+2025-04-10 17:59:26,517 - Logger - INFO - Processed chunk size:1// 9900
+2025-04-10 17:59:26,517 - Logger - INFO - Sent chunk 2, size: 9900
+2025-04-10 17:59:26,517 - Logger - INFO - TIMING: Sending chunk 2 took 0.0001 seconds
+2025-04-10 17:59:26,939 - Logger - INFO - TIMING: Postprocessing chunk 2 took 0.0002 seconds
+2025-04-10 17:59:26,939 - Logger - INFO - TIMING: Encoding chunk 2 took 0.0003 seconds
+2025-04-10 17:59:26,939 - Logger - INFO - Processed chunk size:2// 9900
+2025-04-10 17:59:26,939 - Logger - INFO - Sent chunk 3, size: 9900
+2025-04-10 17:59:26,940 - Logger - INFO - TIMING: Sending chunk 3 took 0.0002 seconds
+2025-04-10 17:59:27,393 - Logger - INFO - TIMING: Postprocessing chunk 3 took 0.0002 seconds
+2025-04-10 17:59:27,394 - Logger - INFO - TIMING: Encoding chunk 3 took 0.0004 seconds
+2025-04-10 17:59:27,394 - Logger - INFO - Processed chunk size:3// 9900
+2025-04-10 17:59:27,394 - Logger - INFO - Sent chunk 4, size: 9900
+2025-04-10 17:59:27,394 - Logger - INFO - TIMING: Sending chunk 4 took 0.0001 seconds
+2025-04-10 17:59:27,874 - Logger - INFO - TIMING: Postprocessing chunk 4 took 0.0002 seconds
+2025-04-10 17:59:27,875 - Logger - INFO - TIMING: Encoding chunk 4 took 0.0004 seconds
+2025-04-10 17:59:27,875 - Logger - INFO - Processed chunk size:4// 9900
+2025-04-10 17:59:27,875 - Logger - INFO - Sent chunk 5, size: 9900
+2025-04-10 17:59:27,875 - Logger - INFO - TIMING: Sending chunk 5 took 0.0001 seconds
+2025-04-10 17:59:28,411 - Logger - INFO - TIMING: Postprocessing chunk 5 took 0.0002 seconds
+2025-04-10 17:59:28,412 - Logger - INFO - TIMING: Encoding chunk 5 took 0.0006 seconds
+2025-04-10 17:59:28,412 - Logger - INFO - Processed chunk size:5// 9900
+2025-04-10 17:59:28,413 - Logger - INFO - Sent chunk 6, size: 9900
+2025-04-10 17:59:28,413 - Logger - INFO - TIMING: Sending chunk 6 took 0.0003 seconds
+2025-04-10 17:59:28,997 - Logger - INFO - TIMING: Postprocessing chunk 6 took 0.0002 seconds
+2025-04-10 17:59:28,998 - Logger - INFO - TIMING: Encoding chunk 6 took 0.0004 seconds
+2025-04-10 17:59:28,998 - Logger - INFO - Processed chunk size:6// 9900
+2025-04-10 17:59:28,998 - Logger - INFO - Sent chunk 7, size: 9900
+2025-04-10 17:59:28,998 - Logger - INFO - TIMING: Sending chunk 7 took 0.0003 seconds
+2025-04-10 17:59:29,615 - Logger - INFO - TIMING: Postprocessing chunk 7 took 0.0002 seconds
+2025-04-10 17:59:29,616 - Logger - INFO - TIMING: Encoding chunk 7 took 0.0004 seconds
+2025-04-10 17:59:29,616 - Logger - INFO - Processed chunk size:7// 9900
+2025-04-10 17:59:29,616 - Logger - INFO - Sent chunk 8, size: 9900
+2025-04-10 17:59:29,616 - Logger - INFO - TIMING: Sending chunk 8 took 0.0002 seconds
+2025-04-10 17:59:30,245 - Logger - INFO - TIMING: Postprocessing chunk 8 took 0.0003 seconds
+2025-04-10 17:59:30,245 - Logger - INFO - TIMING: Encoding chunk 8 took 0.0004 seconds
+2025-04-10 17:59:30,245 - Logger - INFO - Processed chunk size:8// 9900
+2025-04-10 17:59:30,245 - Logger - INFO - Sent chunk 9, size: 9900
+2025-04-10 17:59:30,246 - Logger - INFO - TIMING: Sending chunk 9 took 0.0002 seconds
+2025-04-10 17:59:30,939 - Logger - INFO - TIMING: Postprocessing chunk 9 took 0.0002 seconds
+2025-04-10 17:59:30,940 - Logger - INFO - TIMING: Encoding chunk 9 took 0.0004 seconds
+2025-04-10 17:59:30,940 - Logger - INFO - Processed chunk size:9// 9900
+2025-04-10 17:59:30,940 - Logger - INFO - Sent chunk 10, size: 9900
+2025-04-10 17:59:30,940 - Logger - INFO - TIMING: Sending chunk 10 took 0.0002 seconds
+2025-04-10 17:59:31,612 - Logger - INFO - TIMING: Postprocessing chunk 10 took 0.0002 seconds
+2025-04-10 17:59:31,613 - Logger - INFO - TIMING: Encoding chunk 10 took 0.0005 seconds
+2025-04-10 17:59:31,613 - Logger - INFO - Processed chunk size:10// 9900
+2025-04-10 17:59:31,614 - Logger - INFO - Sent chunk 11, size: 9900
+2025-04-10 17:59:31,614 - Logger - INFO - TIMING: Sending chunk 11 took 0.0003 seconds
+2025-04-10 17:59:32,374 - Logger - INFO - TIMING: Postprocessing chunk 11 took 0.0003 seconds
+2025-04-10 17:59:32,375 - Logger - INFO - TIMING: Encoding chunk 11 took 0.0005 seconds
+2025-04-10 17:59:32,375 - Logger - INFO - Processed chunk size:11// 9900
+2025-04-10 17:59:32,375 - Logger - INFO - Sent chunk 12, size: 9900
+2025-04-10 17:59:32,375 - Logger - INFO - TIMING: Sending chunk 12 took 0.0002 seconds
+2025-04-10 17:59:33,106 - Logger - INFO - TIMING: Postprocessing chunk 12 took 0.0002 seconds
+2025-04-10 17:59:33,106 - Logger - INFO - TIMING: Encoding chunk 12 took 0.0004 seconds
+2025-04-10 17:59:33,106 - Logger - INFO - Processed chunk size:12// 9900
+2025-04-10 17:59:33,106 - Logger - INFO - Sent chunk 13, size: 9900
+2025-04-10 17:59:33,107 - Logger - INFO - TIMING: Sending chunk 13 took 0.0002 seconds
+2025-04-10 17:59:33,925 - Logger - INFO - TIMING: Postprocessing chunk 13 took 0.0002 seconds
+2025-04-10 17:59:33,926 - Logger - INFO - TIMING: Encoding chunk 13 took 0.0009 seconds
+2025-04-10 17:59:33,926 - Logger - INFO - Processed chunk size:13// 10012
+2025-04-10 17:59:33,926 - Logger - INFO - Sent chunk 14, size: 10012
+2025-04-10 17:59:33,926 - Logger - INFO - TIMING: Sending chunk 14 took 0.0003 seconds
+2025-04-10 17:59:34,763 - Logger - INFO - TIMING: Postprocessing chunk 14 took 0.0002 seconds
+2025-04-10 17:59:34,764 - Logger - INFO - TIMING: Encoding chunk 14 took 0.0006 seconds
+2025-04-10 17:59:34,764 - Logger - INFO - Processed chunk size:14// 9900
+2025-04-10 17:59:34,764 - Logger - INFO - Sent chunk 15, size: 9900
+2025-04-10 17:59:34,764 - Logger - INFO - TIMING: Sending chunk 15 took 0.0002 seconds
+2025-04-10 17:59:35,607 - Logger - INFO - TIMING: Postprocessing chunk 15 took 0.0002 seconds
+2025-04-10 17:59:35,607 - Logger - INFO - TIMING: Encoding chunk 15 took 0.0005 seconds
+2025-04-10 17:59:35,608 - Logger - INFO - Processed chunk size:15// 9900
+2025-04-10 17:59:35,608 - Logger - INFO - Sent chunk 16, size: 9900
+2025-04-10 17:59:35,608 - Logger - INFO - TIMING: Sending chunk 16 took 0.0002 seconds
+2025-04-10 17:59:36,428 - Logger - INFO - TIMING: Postprocessing chunk 16 took 0.0002 seconds
+2025-04-10 17:59:36,428 - Logger - INFO - TIMING: Encoding chunk 16 took 0.0005 seconds
+2025-04-10 17:59:36,428 - Logger - INFO - Processed chunk size:16// 8420
+2025-04-10 17:59:36,429 - Logger - INFO - Sent chunk 17, size: 8420
+2025-04-10 17:59:36,429 - Logger - INFO - TIMING: Sending chunk 17 took 0.0002 seconds
+2025-04-10 17:59:36,927 - Logger - INFO - TIMING: Postprocessing chunk 17 took 0.0250 seconds
+2025-04-10 17:59:36,928 - Logger - INFO - TIMING: Encoding chunk 17 took 0.0007 seconds
+2025-04-10 17:59:36,928 - Logger - INFO - Processed chunk size:17// 9444
+2025-04-10 17:59:36,928 - Logger - INFO - Sent chunk 18, size: 9444
+2025-04-10 17:59:36,928 - Logger - INFO - TIMING: Sending chunk 18 took 0.0002 seconds
+2025-04-10 17:59:37,416 - Logger - INFO - TIMING: Postprocessing chunk 18 took 0.0003 seconds
+2025-04-10 17:59:37,416 - Logger - INFO - TIMING: Encoding chunk 18 took 0.0004 seconds
+2025-04-10 17:59:37,416 - Logger - INFO - Processed chunk size:18// 9900
+2025-04-10 17:59:37,417 - Logger - INFO - Sent chunk 19, size: 9900
+2025-04-10 17:59:37,417 - Logger - INFO - TIMING: Sending chunk 19 took 0.0002 seconds
+2025-04-10 17:59:37,923 - Logger - INFO - TIMING: Postprocessing chunk 19 took 0.0002 seconds
+2025-04-10 17:59:37,924 - Logger - INFO - TIMING: Encoding chunk 19 took 0.0005 seconds
+2025-04-10 17:59:37,924 - Logger - INFO - Processed chunk size:19// 9900
+2025-04-10 17:59:37,925 - Logger - INFO - Sent chunk 20, size: 9900
+2025-04-10 17:59:37,925 - Logger - INFO - TIMING: Sending chunk 20 took 0.0002 seconds
+2025-04-10 17:59:38,430 - Logger - INFO - TIMING: Postprocessing chunk 20 took 0.0002 seconds
+2025-04-10 17:59:38,431 - Logger - INFO - TIMING: Encoding chunk 20 took 0.0004 seconds
+2025-04-10 17:59:38,431 - Logger - INFO - Processed chunk size:20// 9900
+2025-04-10 17:59:38,431 - Logger - INFO - Sent chunk 21, size: 9900
+2025-04-10 17:59:38,431 - Logger - INFO - TIMING: Sending chunk 21 took 0.0003 seconds
+2025-04-10 17:59:38,959 - Logger - INFO - TIMING: Postprocessing chunk 21 took 0.0002 seconds
+2025-04-10 17:59:38,959 - Logger - INFO - TIMING: Encoding chunk 21 took 0.0004 seconds
+2025-04-10 17:59:38,959 - Logger - INFO - Processed chunk size:21// 9900
+2025-04-10 17:59:38,960 - Logger - INFO - Sent chunk 22, size: 9900
+2025-04-10 17:59:38,960 - Logger - INFO - TIMING: Sending chunk 22 took 0.0002 seconds
+2025-04-10 17:59:39,487 - Logger - INFO - TIMING: Postprocessing chunk 22 took 0.0002 seconds
+2025-04-10 17:59:39,488 - Logger - INFO - TIMING: Encoding chunk 22 took 0.0004 seconds
+2025-04-10 17:59:39,488 - Logger - INFO - Processed chunk size:22// 9900
+2025-04-10 17:59:39,488 - Logger - INFO - Sent chunk 23, size: 9900
+2025-04-10 17:59:39,488 - Logger - INFO - TIMING: Sending chunk 23 took 0.0002 seconds
+2025-04-10 17:59:40,036 - Logger - INFO - TIMING: Postprocessing chunk 23 took 0.0002 seconds
+2025-04-10 17:59:40,036 - Logger - INFO - TIMING: Encoding chunk 23 took 0.0004 seconds
+2025-04-10 17:59:40,036 - Logger - INFO - Processed chunk size:23// 9900
+2025-04-10 17:59:40,036 - Logger - INFO - Sent chunk 24, size: 9900
+2025-04-10 17:59:40,036 - Logger - INFO - TIMING: Sending chunk 24 took 0.0001 seconds
+2025-04-10 17:59:40,608 - Logger - INFO - TIMING: Postprocessing chunk 24 took 0.0002 seconds
+2025-04-10 17:59:40,608 - Logger - INFO - TIMING: Encoding chunk 24 took 0.0003 seconds
+2025-04-10 17:59:40,608 - Logger - INFO - Processed chunk size:24// 9900
+2025-04-10 17:59:40,608 - Logger - INFO - Sent chunk 25, size: 9900
+2025-04-10 17:59:40,608 - Logger - INFO - TIMING: Sending chunk 25 took 0.0001 seconds
+2025-04-10 17:59:41,208 - Logger - INFO - TIMING: Postprocessing chunk 25 took 0.0002 seconds
+2025-04-10 17:59:41,208 - Logger - INFO - TIMING: Encoding chunk 25 took 0.0004 seconds
+2025-04-10 17:59:41,208 - Logger - INFO - Processed chunk size:25// 9900
+2025-04-10 17:59:41,209 - Logger - INFO - Sent chunk 26, size: 9900
+2025-04-10 17:59:41,209 - Logger - INFO - TIMING: Sending chunk 26 took 0.0002 seconds
+2025-04-10 17:59:41,842 - Logger - INFO - TIMING: Postprocessing chunk 26 took 0.0002 seconds
+2025-04-10 17:59:41,842 - Logger - INFO - TIMING: Encoding chunk 26 took 0.0003 seconds
+2025-04-10 17:59:41,842 - Logger - INFO - Processed chunk size:26// 9900
+2025-04-10 17:59:41,842 - Logger - INFO - Sent chunk 27, size: 9900
+2025-04-10 17:59:41,842 - Logger - INFO - TIMING: Sending chunk 27 took 0.0001 seconds
+2025-04-10 17:59:42,502 - Logger - INFO - TIMING: Postprocessing chunk 27 took 0.0002 seconds
+2025-04-10 17:59:42,502 - Logger - INFO - TIMING: Encoding chunk 27 took 0.0004 seconds
+2025-04-10 17:59:42,502 - Logger - INFO - Processed chunk size:27// 9900
+2025-04-10 17:59:42,503 - Logger - INFO - Sent chunk 28, size: 9900
+2025-04-10 17:59:42,503 - Logger - INFO - TIMING: Sending chunk 28 took 0.0003 seconds
+2025-04-10 17:59:43,229 - Logger - INFO - TIMING: Postprocessing chunk 28 took 0.0002 seconds
+2025-04-10 17:59:43,230 - Logger - INFO - TIMING: Encoding chunk 28 took 0.0005 seconds
+2025-04-10 17:59:43,230 - Logger - INFO - Processed chunk size:28// 9900
+2025-04-10 17:59:43,230 - Logger - INFO - Sent chunk 29, size: 9900
+2025-04-10 17:59:43,230 - Logger - INFO - TIMING: Sending chunk 29 took 0.0001 seconds
+2025-04-10 17:59:43,894 - Logger - INFO - TIMING: Postprocessing chunk 29 took 0.0002 seconds
+2025-04-10 17:59:43,895 - Logger - INFO - TIMING: Encoding chunk 29 took 0.0004 seconds
+2025-04-10 17:59:43,896 - Logger - INFO - Processed chunk size:29// 8420
+2025-04-10 17:59:43,896 - Logger - INFO - Sent chunk 30, size: 8420
+2025-04-10 17:59:43,896 - Logger - INFO - TIMING: Sending chunk 30 took 0.0002 seconds
+2025-04-10 17:59:44,302 - Logger - INFO - TIMING: Postprocessing chunk 30 took 0.0247 seconds
+2025-04-10 17:59:44,302 - Logger - INFO - TIMING: Encoding chunk 30 took 0.0005 seconds
+2025-04-10 17:59:44,302 - Logger - INFO - Processed chunk size:30// 9444
+2025-04-10 17:59:44,303 - Logger - INFO - Sent chunk 31, size: 9444
+2025-04-10 17:59:44,303 - Logger - INFO - TIMING: Sending chunk 31 took 0.0001 seconds
+2025-04-10 17:59:44,699 - Logger - INFO - TIMING: Postprocessing chunk 31 took 0.0002 seconds
+2025-04-10 17:59:44,700 - Logger - INFO - TIMING: Encoding chunk 31 took 0.0004 seconds
+2025-04-10 17:59:44,700 - Logger - INFO - Processed chunk size:31// 9900
+2025-04-10 17:59:44,700 - Logger - INFO - Sent chunk 32, size: 9900
+2025-04-10 17:59:44,700 - Logger - INFO - TIMING: Sending chunk 32 took 0.0002 seconds
+2025-04-10 17:59:45,117 - Logger - INFO - TIMING: Postprocessing chunk 32 took 0.0002 seconds
+2025-04-10 17:59:45,117 - Logger - INFO - TIMING: Encoding chunk 32 took 0.0003 seconds
+2025-04-10 17:59:45,117 - Logger - INFO - Processed chunk size:32// 9900
+2025-04-10 17:59:45,118 - Logger - INFO - Sent chunk 33, size: 9900
+2025-04-10 17:59:45,118 - Logger - INFO - TIMING: Sending chunk 33 took 0.0002 seconds
+2025-04-10 17:59:45,569 - Logger - INFO - TIMING: Postprocessing chunk 33 took 0.0002 seconds
+2025-04-10 17:59:45,569 - Logger - INFO - TIMING: Encoding chunk 33 took 0.0004 seconds
+2025-04-10 17:59:45,569 - Logger - INFO - Processed chunk size:33// 9900
+2025-04-10 17:59:45,569 - Logger - INFO - Sent chunk 34, size: 9900
+2025-04-10 17:59:45,569 - Logger - INFO - TIMING: Sending chunk 34 took 0.0001 seconds
+2025-04-10 17:59:46,054 - Logger - INFO - TIMING: Postprocessing chunk 34 took 0.0002 seconds
+2025-04-10 17:59:46,055 - Logger - INFO - TIMING: Encoding chunk 34 took 0.0004 seconds
+2025-04-10 17:59:46,055 - Logger - INFO - Processed chunk size:34// 9900
+2025-04-10 17:59:46,055 - Logger - INFO - Sent chunk 35, size: 9900
+2025-04-10 17:59:46,055 - Logger - INFO - TIMING: Sending chunk 35 took 0.0003 seconds
+2025-04-10 17:59:46,600 - Logger - INFO - TIMING: Postprocessing chunk 35 took 0.0002 seconds
+2025-04-10 17:59:46,601 - Logger - INFO - TIMING: Encoding chunk 35 took 0.0004 seconds
+2025-04-10 17:59:46,601 - Logger - INFO - Processed chunk size:35// 9900
+2025-04-10 17:59:46,601 - Logger - INFO - Sent chunk 36, size: 9900
+2025-04-10 17:59:46,601 - Logger - INFO - TIMING: Sending chunk 36 took 0.0002 seconds
+2025-04-10 17:59:46,853 - Logger - INFO - TIMING: Postprocessing chunk 36 took 0.0002 seconds
+2025-04-10 17:59:46,853 - Logger - INFO - TIMING: Encoding chunk 36 took 0.0003 seconds
+2025-04-10 17:59:46,853 - Logger - INFO - Processed chunk size:36// 1936
+2025-04-10 17:59:46,854 - Logger - INFO - Sent chunk 37, size: 1936
+2025-04-10 17:59:46,854 - Logger - INFO - TIMING: Sending chunk 37 took 0.0002 seconds
+2025-04-10 17:59:46,854 - Logger - INFO - PERFORMANCE SUMMARY:
+2025-04-10 17:59:46,854 - Logger - INFO - - Total chunks processed: 37
+2025-04-10 17:59:46,854 - Logger - INFO - - Average postprocessing time: 0.0022s per chunk
+2025-04-10 17:59:46,854 - Logger - INFO - - Average encoding time: 0.0004s per chunk
+2025-04-10 17:59:46,854 - Logger - INFO - - Total postprocessing time: 0.0816s
+2025-04-10 17:59:46,854 - Logger - INFO - - Total encoding time: 0.0163s
+2025-04-10 17:59:46,854 - Logger - INFO - - Estimated inference time: -0.0969s (-9630.63%)
+2025-04-10 17:59:46,854 - Logger - INFO - TIMING: TTS Generation (total) took 21.3888 seconds
+2025-04-10 17:59:46,854 - Logger - INFO - TIMING: Full TTS processing and sending took 21.3889 seconds
+2025-04-10 17:59:46,854 - Logger - INFO - Avg send time: 0.0001s per chunk
+2025-04-10 17:59:46,854 - Logger - INFO - Sending completion message
+2025-04-10 17:59:46,854 - Logger - INFO - TIMING: WebSocket connection lifetime took 21.4635 seconds
