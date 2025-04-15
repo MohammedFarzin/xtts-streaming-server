@@ -143,11 +143,6 @@ def worker_main(task_q: mp.Queue, result_q: mp.Queue, stop_evt: mp.Event):
             speaker_embedding = torch.tensor(spkr_emb, dtype=torch.float32, device=DEVICE).unsqueeze(0).unsqueeze(-1)
             # Ensure gpt_cond_latent is correctly shaped [1, 1024, N]
             gpt_cond_latent_tensor = torch.tensor(gpt_lat, dtype=torch.float32, device=DEVICE).reshape((-1, 1024)).unsqueeze(0)
-            if gpt_cond_latent_tensor.ndim == 2: # If shape is [N, 1024]
-                 gpt_cond_latent_tensor = gpt_cond_latent_tensor.transpose(0, 1) # -> [1024, N]
-            if gpt_cond_latent_tensor.ndim == 1: # If shape is [1024]
-                 gpt_cond_latent_tensor = gpt_cond_latent_tensor.unsqueeze(1) # -> [1024, 1]
-            gpt_cond_latent_tensor = gpt_cond_latent_tensor.unsqueeze(0) # -> [1, 1024, N]
 
 
             # Run inference stream
