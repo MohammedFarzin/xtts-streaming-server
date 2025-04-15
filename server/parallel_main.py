@@ -48,6 +48,10 @@ async_result_queue: asyncio.Queue = asyncio.Queue()
 # Event to signal shutdown to workers and reader thread
 stop_event = mp.Event()
 
+
+with open("./default_speaker.json", "r") as file:
+    speaker = json.load(file)
+
 # --- Model Loading ---
 # Function to load the model - will be called ONCE per worker process
 def load_model_worker():
@@ -82,13 +86,13 @@ def postprocess_chunk(chunk: Optional[torch.Tensor]) -> Optional[np.ndarray]:
          # Handle potential error objects passed as chunks
          return None # Or raise an error, depending on desired behavior
 
-    wav = chunk.clone().detach().cpu().numpy().squeeze()
-    # Ensure it's 1D
-    if wav.ndim > 1:
-        logger.warning(f"Chunk had unexpected dimensions {wav.shape}, taking first channel.")
-        wav = wav[0] if wav.shape[0] > 0 else wav.flatten() # Take first channel or flatten
-
-    wav = np.clip(wav * 32767, -32767, 32767).astype(np.int16)
+    """Post process the output waveform"""
+    if isinstance(wav, list):
+        wav = torch.cat(wav, dim=0)
+    wav = wav.clone().detach().cpu().numpy()
+    wav = wav[None, : int(wav.shape[0])]
+    wav = np.clip(wav, -1, 1)
+    wav = (wav * 32767).astype(np.int16)
     return wav
 
 # Synchronous encoding, runs in the main process
@@ -136,7 +140,11 @@ def worker_main(task_q: mp.Queue, result_q: mp.Queue, stop_evt: mp.Event):
             if task_data is None: # Sentinel value for shutdown
                 break
 
-            stream_id, text, lang, spkr_emb, gpt_lat, strm_chunk_sz = task_data
+            with open("./default_speaker.json", "r") as file:
+                speaker = json.load(file)
+
+            stream_id, text= task_data
+            lang, spkr_emb, gpt_lat, strm_chunk_sz = "en", speaker["speaker_embedding"], speaker["gpt_cond_latent"], "20"
             logger.info(f"[Worker {pid}] Received task for stream_id: {stream_id}")
 
             # Prepare inputs for the model
@@ -153,11 +161,6 @@ def worker_main(task_q: mp.Queue, result_q: mp.Queue, stop_evt: mp.Event):
                 speaker_embedding,
                 stream_chunk_size=strm_chunk_sz,
                 enable_text_splitting=True,
-                temperature=0.65, # Example: Add other relevant inference params
-                length_penalty=1.0,
-                repetition_penalty=2.0,
-                top_k=50,
-                top_p=0.85,
             )
 
             # Send chunks back to the main process
@@ -226,15 +229,6 @@ app = FastAPI(title="XTTS Multiprocessing Streaming Server")
 class StreamingInputs(BaseModel):
     stream_id: str = Field(..., description="Unique identifier for this streaming request.")
     text: str = Field(..., description="Text to be synthesized.")
-    language: str = Field("en", description="Language code (e.g., 'en', 'es').")
-    # Ensure these match the expected format from XTTS speaker extraction
-    speaker_embedding: List[float] = Field(..., description="Speaker embedding vector.")
-    gpt_cond_latent: List[List[float]] = Field(..., description="GPT condition latent tensor.")
-    stream_chunk_size: int = Field(20, description="Chunk size for streaming inference.")
-    # Add optional fields for inference parameters if needed
-    # temperature: Optional[float] = 0.65
-    # length_penalty: Optional[float] = 1.0
-    # etc...
 
 # --- Background Task to Process Results ---
 async def result_processor(async_q: asyncio.Queue):
@@ -327,10 +321,6 @@ async def tts_stream_endpoint(websocket: WebSocket):
         task_data = (
             stream_id,
             input_payload.text,
-            input_payload.language,
-            input_payload.speaker_embedding,
-            input_payload.gpt_cond_latent,
-            input_payload.stream_chunk_size
         )
 
         # Put the task onto the queue for a worker to pick up
