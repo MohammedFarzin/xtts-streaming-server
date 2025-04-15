@@ -11,8 +11,7 @@ from pydantic import BaseModel
 from scipy import signal
 import audioop
 from Logger import Log
-import time
-import traceback
+import asyncio
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, UploadFile
 from fastapi.responses import StreamingResponse
@@ -72,7 +71,8 @@ logger = logger.initialize_logger_handler()
 
 
 
-def postprocess(wav):
+
+async def postprocess(wav):
     """Post process the output waveform"""
     if isinstance(wav, list):
         wav = torch.cat(wav, dim=0)
@@ -84,7 +84,7 @@ def postprocess(wav):
 
 
 
-def encode_audio_common(
+async def encode_audio_common(
     frame_input, encode_base64=True, sample_rate=8000, sample_width=1, channels=1, 
     original_sample_rate=24000
 ):
@@ -135,104 +135,68 @@ class StreamingInputs(BaseModel):
     language: str = "en"
     add_wav_header: bool = False
     stream_chunk_size: str = "20"
-    stream_id: str
-
-# Add this at the top of your file with other imports
-from contextlib import contextmanager
-
-@contextmanager
-def timing_context(name):
-    """Context manager to measure execution time of a code block"""
-    start_time = time.time()
-    yield
-    elapsed = time.time() - start_time
-    logger.info(f"TIMING: {name} took {elapsed:.4f} seconds")
 
 
+async def predict_streaming_generator(stream_id, parsed_input):
+    speaker_embedding = torch.tensor(parsed_input.speaker_embedding).unsqueeze(0).unsqueeze(-1)
+    gpt_cond_latent = torch.tensor(parsed_input.gpt_cond_latent).reshape((-1, 1024)).unsqueeze(0)
+    text = parsed_input.text
+    language = parsed_input.language
 
-def predict_streaming_generator(parsed_input):
-    total_inference_time = 0
-    total_postprocess_time = 0
-    total_encode_time = 0
-    chunk_count = 0
+    stream_chunk_size = int(parsed_input.stream_chunk_size)
+    add_wav_header = parsed_input.add_wav_header
+
+    # Create a queue for audio chunks
+    chunk_queue = asyncio.Queue()
+
+    def inference_task():
+        try:
+            for chunks in model.inference_stream(
+                text,
+                language,
+                gpt_cond_latent,
+                speaker_embedding,
+                stream_chunk_size=stream_chunk_size,
+                enable_text_splitting=True
+            ):
+                chunk_queue.put_nowait(chunks)
+            chunk_queue.put_nowait(None)  # Signal end of stream
+        except Exception as e:
+            chunk_queue.put_nowait(e)  # Pass errors to the async side
+
+    # Run inference in a separate thread
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, inference_task)
+
     
-    with timing_context("TTS Generation (total)"):
-        speaker_embedding = torch.tensor(parsed_input.speaker_embedding).unsqueeze(0).unsqueeze(-1)
-        gpt_cond_latent = torch.tensor(parsed_input.gpt_cond_latent).reshape((-1, 1024)).unsqueeze(0)
-        text = parsed_input.text
-        language = parsed_input.language
-
-        stream_chunk_size = int(parsed_input.stream_chunk_size)
-        add_wav_header = parsed_input.add_wav_header
+    await connections[stream_id].send_json({"chunk": processed_chunk})
         
-        logger.info(f"Starting TTS generation for text: '{text}' (length: {len(text)})")
-
-        # Use the generator from model.inference_stream
-        stream_generator = model.inference_stream(
-            text,
-            language,
-            gpt_cond_latent,
-            speaker_embedding,
-            stream_chunk_size=stream_chunk_size,
-            enable_text_splitting=True
-        )
-
-        for i, chunks in enumerate(stream_generator):
-            chunk_count += 1
-            
-            # Measure postprocessing time
-            with timing_context(f"Postprocessing chunk {i}"):
-                start_time = time.time()
-                chunk = postprocess(chunks)
-                elapsed = time.time() - start_time
-                total_postprocess_time += elapsed
-            
-            # Measure encoding time
-            with timing_context(f"Encoding chunk {i}"):
-                start_time = time.time()
-                processed_chunk = encode_audio_common(
-                    chunk, 
-                    encode_base64=False, 
-                    sample_rate=8000, 
-                    sample_width=2
-                )
-                elapsed = time.time() - start_time
-                total_encode_time += elapsed
-            
-            logger.info(f"Processed chunk size:{i}// {len(processed_chunk)}")
-            yield processed_chunk
-        
-        # Log summary statistics
-        if chunk_count > 0:
-            logger.info(f"PERFORMANCE SUMMARY:")
-            logger.info(f"- Total chunks processed: {chunk_count}")
-            logger.info(f"- Average postprocessing time: {total_postprocess_time/chunk_count:.4f}s per chunk")
-            logger.info(f"- Average encoding time: {total_encode_time/chunk_count:.4f}s per chunk")
-            logger.info(f"- Total postprocessing time: {total_postprocess_time:.4f}s")
-            logger.info(f"- Total encoding time: {total_encode_time:.4f}s")
-            # Inference time is the remainder
-            total_time = time.time() - start_time
-            inference_time = total_time - total_postprocess_time - total_encode_time
-            logger.info(f"- Estimated inference time: {inference_time:.4f}s ({inference_time/total_time*100:.2f}%)")
-
-        
+    await connections[stream_id].send_json({"status": "completed"})
+    logger.info(f"Completed stream for {stream_id}")
 
 
 @app.websocket("/tts_stream")
 async def predict_streaming_endpoint(parsed_input: WebSocket):
-    with timing_context("WebSocket connection lifetime"):
-        await parsed_input.accept()
-        logger.info("WebSocket connection established")
+    await parsed_input.accept()
+    logger.info("WebSocket connection established")
+
+    while True:
+        data_json = await parsed_input.receive_text()
+        data_json = json.loads(data_json)
+
+        if "stream_id" not in data_json:
+            logger.info("Missing stream_id in request")
+            continue
+
+
+        connections[data_json["stream_id"]] = parsed_input
         
         try:
-            with timing_context("WebSocket data receive"):
-                data_json = await parsed_input.receive_text()
-                data_json = json.loads(data_json)
+
 
             if data_json["text"] is None:
-                parsed_input.close()
                 logger.info(f"Received empty text, closing connection for {data_json['stream_id']}")
-                return
+                
 
             # Extract stream_id
             if "stream_id" not in data_json:
@@ -240,32 +204,13 @@ async def predict_streaming_endpoint(parsed_input: WebSocket):
                 await parsed_input.send_json({"error": "Missing stream_id"})
                 return
             
-            connections[data_json["stream_id"]] = parsed_input
 
             logger.info(f"WebSocket connection ID: {data_json['stream_id']}, {parsed_input}, {data_json}")
-            input_data = StreamingInputs(
-                text=data_json["text"],
-                stream_id=data_json["stream_id"]
-            )
+            input_data = StreamingInputs(text=data_json["text"])
 
-            chunk_count = 0
-            total_send_time = 0.0
-            
-            with timing_context("Full TTS processing and sending"):
-                for chunk in predict_streaming_generator(input_data):
-                    chunk_count += 1
-                    with timing_context(f"Sending chunk {chunk_count}"):
-                        start_time = time.time()
-                        await connections[data_json["stream_id"]].send_json({"chunk": chunk})
-                        elapsed = time.time() - start_time
-                        total_send_time += elapsed
-                        logger.info(f"Sent chunk {chunk_count}, size: {len(chunk)}")
-            
-            if chunk_count > 0:
-                logger.info(f"Avg send time: {total_send_time/chunk_count:.4f}s per chunk")
-                
-            await connections[data_json["stream_id"]].send_json({"status": "completed"})
-            logger.info("Sending completion message")
+
+            await predict_streaming_generator(data_json["stream_id"], input_data)
+
         except WebSocketDisconnect:
             logger.info(f"WebSocket connection closed and deleted: {data_json['stream_id']}")
             connections[data_json["stream_id"]].close()
@@ -273,12 +218,10 @@ async def predict_streaming_endpoint(parsed_input: WebSocket):
 
         except Exception as e:
             logger.info(f"Error: {e}")
-            logger.error("Traceback:\n" + traceback.format_exc())  
             try:
                 await connections[data_json["stream_id"]].send_json({"error": str(e)})
             except Exception as e:
                 logger.info(f"Error sending error message: {e}")
-                logger.error("Traceback:\n" + traceback.format_exc())  
 
 @app.post("/stop_stream/{stream_id}")
 async def stop_stream(stream_id: str):
