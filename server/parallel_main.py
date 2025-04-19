@@ -17,6 +17,7 @@ import os
 import threading
 import logging
 import time
+import audioop
 
 # --- Logging Setup ---
 logging.basicConfig(level=logging.INFO)
@@ -24,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 # --- Configuration ---
 # Determine based on GPU memory and model size
-NUM_WORKERS = int(os.environ.get("NUM_WORKERS", 2)) # Default to 2 workers
+NUM_WORKERS = int(os.environ.get("NUM_WORKERS", 12)) # Default to 2 workers
 MAX_QUEUE_SIZE = NUM_WORKERS * 4 # Limit backlog
 MODEL_NAME = "tts_models/multilingual/multi-dataset/xtts_v2"
 # Use CUDA if available
@@ -48,9 +49,6 @@ async_result_queue: asyncio.Queue = asyncio.Queue()
 # Event to signal shutdown to workers and reader thread
 stop_event = mp.Event()
 
-
-with open("./default_speaker.json", "r") as file:
-    speaker = json.load(file)
 
 # --- Model Loading ---
 # Function to load the model - will be called ONCE per worker process
@@ -87,42 +85,60 @@ def postprocess_chunk(chunk: Optional[torch.Tensor]) -> Optional[np.ndarray]:
          return None # Or raise an error, depending on desired behavior
 
     """Post process the output waveform"""
-    if isinstance(wav, list):
-        wav = torch.cat(wav, dim=0)
-    wav = wav.clone().detach().cpu().numpy()
-    wav = wav[None, : int(wav.shape[0])]
-    wav = np.clip(wav, -1, 1)
-    wav = (wav * 32767).astype(np.int16)
-    return wav
+    if isinstance(chunk, list):
+        chunk = torch.cat(chunk, dim=0)
+    chunk = chunk.clone().detach().cpu().numpy()
+    chunk = chunk[None, : int(chunk.shape[0])]
+    chunk = np.clip(chunk, -1, 1)
+    chunk = (chunk * 32767).astype(np.int16)
+    return chunk
 
 # Synchronous encoding, runs in the main process
-def encode_audio_chunk(wav: Optional[np.ndarray], sample_rate: int, sample_width: int) -> Optional[str]:
-    if wav is None:
+def encode_audio_chunk(frame_input, encode_base64=True, sample_rate=8000, sample_width=1, channels=1, original_sample_rate=24000) -> Optional[str]:
+    if frame_input is None:
         return None
-    # Basic resampling if needed (and scipy is installed)
-    # Note: Simple linear interpolation might be sufficient for downsampling speech
-    # if OUTPUT_SAMPLE_RATE != sample_rate:
-    #     try:
-    #         # Placeholder: Add proper resampling if needed, e.g., using librosa or scipy.signal.resample
-    #         num_samples = int(len(wav) * sample_rate / OUTPUT_SAMPLE_RATE)
-    #         # Very basic resampling - consider a proper library for quality
-    #         indices = np.linspace(0, len(wav) - 1, num_samples)
-    #         wav = np.interp(indices, np.arange(len(wav)), wav).astype(np.int16)
-    #         logger.debug(f"Resampled chunk to {len(wav)} samples for {sample_rate} Hz")
-    #     except Exception as e:
-    #         logger.error(f"Resampling failed: {e}")
-    #         # Decide how to handle: return None, raise error, or send original?
-    #         # Sending original might be okay if client handles sample rate.
+    
+    """Return base64 encoded audio with proper resampling"""
+    # Convert bytes to numpy array if needed
+    if isinstance(frame_input, bytes):
+        # Convert based on the width of each sample
+        dtype = np.int16 if sample_width == 2 else (np.int8 if sample_width == 1 else np.float32)
+        audio_data = np.frombuffer(frame_input, dtype=dtype)
+    else:
+        audio_data = frame_input
 
-    # Ensure correct byte width (simple truncation/padding if needed)
-    # This part assumes int16, matching postprocess_chunk output.
-    # If sample_width=1 (8-bit), conversion needed.
-    if sample_width != 2:
-         logger.warning(f"Sample width {sample_width} not directly supported, using 2 (16-bit).")
-         # Add conversion logic here if needed
 
-    audio_bytes = wav.tobytes()
-    return base64.b64encode(audio_bytes).decode("utf-8")
+    if len(audio_data.shape) > 1:
+        audio_data = audio_data.flatten()
+
+    # logger.info(f"Audio data shape: {audio_data.shape}, dtype: {audio_data.dtype}, min: {np.min(audio_data)}, max: {np.max(audio_data)}")
+    
+
+    if audio_data.dtype == np.int16:
+        audio_data_float = audio_data.astype(np.float32) / 32767.0
+    elif audio_data.dtype == np.int8:
+        audio_data_float = audio_data.astype(np.float32) / 127.0
+    else:
+        audio_data_float = audio_data
+
+    if sample_rate != original_sample_rate:
+        # Calculate resampling ratio
+        ratio = sample_rate / original_sample_rate
+        output_samples = int(len(audio_data_float) * ratio)
+        resampled_audio = signal.resample(audio_data_float, output_samples)
+        
+        if sample_width == 2:
+            audio_bytes = (np.clip(resampled_audio, -1, 1) * 32767).astype(np.int16).tobytes()
+        elif sample_width == 1:
+            audio_bytes = (np.clip(resampled_audio, -1, 1) * 127).astype(np.int8).tobytes()
+        else:
+            audio_bytes = resampled_audio.astype(np.float32).tobytes()
+    
+    audio_bytes_mu = audioop.lin2ulaw(audio_bytes, 2)
+    wave_64 = base64.b64encode(audio_bytes_mu).decode("utf-8")
+    return wave_64
+
+    
 
 # --- Worker Process Target Function ---
 def worker_main(task_q: mp.Queue, result_q: mp.Queue, stop_evt: mp.Event):
@@ -148,9 +164,9 @@ def worker_main(task_q: mp.Queue, result_q: mp.Queue, stop_evt: mp.Event):
             logger.info(f"[Worker {pid}] Received task for stream_id: {stream_id}")
 
             # Prepare inputs for the model
-            speaker_embedding = torch.tensor(spkr_emb, dtype=torch.float32, device=DEVICE).unsqueeze(0).unsqueeze(-1)
+            speaker_embedding = torch.tensor(spkr_emb, device=DEVICE).unsqueeze(0).unsqueeze(-1)
             # Ensure gpt_cond_latent is correctly shaped [1, 1024, N]
-            gpt_cond_latent_tensor = torch.tensor(gpt_lat, dtype=torch.float32, device=DEVICE).reshape((-1, 1024)).unsqueeze(0)
+            gpt_cond_latent_tensor = torch.tensor(gpt_lat, device=DEVICE).reshape((-1, 1024)).unsqueeze(0)
 
 
             # Run inference stream
@@ -309,13 +325,11 @@ async def tts_stream_endpoint(websocket: WebSocket):
         input_payload = StreamingInputs(**json.loads(initial_data))
         stream_id = input_payload.stream_id
 
-        if stream_id in connections:
-             logger.warning(f"Stream ID {stream_id} already connected. Closing new connection.")
-             await websocket.close(code=1008, reason="Stream ID already in use")
-             return
-
         logger.info(f"Received initial request for stream_id: {stream_id}")
-        connections[stream_id] = websocket
+
+        if stream_id not in connections:
+            connections[stream_id] = websocket
+
 
         # Prepare task data for the worker queue
         task_data = (
